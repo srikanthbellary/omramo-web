@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img">
+  <title>Omramo</title>
+  <style>
+    .p{fill:none;stroke:#1E1A16;stroke-width:2}
+    .s{fill:#1E1A16}
+    @media (prefers-color-scheme:dark){.p{stroke:#EFE6D6}.s{fill:#EFE6D6}}
+  </style>
+  <path class="p" d="M8 5h16a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3Z"/>
+  <path class="s" d="M13.5 3h5v26h-5Z"/>
+</svg>

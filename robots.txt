@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omramo.com/sitemap.xml

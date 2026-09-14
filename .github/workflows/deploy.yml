@@ -1,0 +1,55 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Check the site before it ships
+        run: |
+          set -e
+          for f in index.html brand.html app-screens.html 404.html og.png og-brand.png og-screens.png favicon.svg favicon-32.png apple-touch-icon.png robots.txt sitemap.xml; do
+            test -f "$f" || { echo "missing $f"; exit 1; }
+          done
+          python3 - <<'PY'
+          import glob, struct, xml.etree.ElementTree as ET
+          for f in glob.glob("brand/*.svg") + ["favicon.svg", "sitemap.xml"]:
+              ET.parse(f)
+          for f in ("og.png", "og-brand.png", "og-screens.png"):
+              with open(f, "rb") as fh:
+                  w, h = struct.unpack(">II", fh.read(24)[16:24])
+              assert (w, h) == (1200, 630), (f, w, h)
+          print("svg parses, share cards are 1200 by 630")
+          PY
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
