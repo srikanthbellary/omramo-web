@@ -40,24 +40,40 @@
   var hero = document.querySelector(".hero");
   if (fold) {
     var hint = document.getElementById("fold-hint");
+    var userTouched = false;
+    var introDone = false;
     var setState = function (state) {
       fold.setAttribute("data-state", state);
       fold.setAttribute("aria-pressed", state === "closed" ? "true" : "false");
       if (hint) hint.textContent = state === "closed" ? "Closed, it reads Omramo. Tap to open the book." : "Open, it is the book. Tap to close it.";
     };
+    var finishIntro = function () {
+      if (introDone) return;
+      introDone = true;
+      fold.removeAttribute("data-autoplay");
+      setState("open");
+    };
+    if (reduce || !fold.hasAttribute("data-autoplay")) {
+      finishIntro();
+    } else {
+      /* the CSS intro runs on its own; hand control to the button once it has finished */
+      window.setTimeout(finishIntro, 2500);
+    }
     fold.addEventListener("click", function () {
+      finishIntro();
+      userTouched = true;
       setState(fold.getAttribute("data-state") === "closed" ? "open" : "closed");
     });
-    if (reduce || !fold.hasAttribute("data-autoplay")) {
-      setState("open");
-      if (hero) hero.classList.add("ready");
-    } else {
-      setState("closed");
-      window.setTimeout(function () { setState("open"); }, 900);
-      window.setTimeout(function () { if (hero) hero.classList.add("ready"); }, 1500);
+    /* leaving the hero closes the book; coming back opens it, unless the reader has taken over */
+    if (hero && "IntersectionObserver" in window && !reduce) {
+      var heroIo = new IntersectionObserver(function (entries) {
+        var ratio = entries[0].intersectionRatio;
+        if (!introDone || userTouched) return;
+        if (ratio < 0.3 && fold.getAttribute("data-state") === "open") setState("closed");
+        else if (ratio > 0.55 && fold.getAttribute("data-state") === "closed") setState("open");
+      }, { threshold: [0, 0.3, 0.55, 1] });
+      heroIo.observe(hero);
     }
-  } else if (hero) {
-    hero.classList.add("ready");
   }
 
   /* ---------------------------------------------------------- reveals */
