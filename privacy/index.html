@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy (draft) — Omramo</title>
+  <meta name="description" content="A plain-language draft of how Omramo intends to handle privacy: the app is designed to collect nothing. Not legal text and not yet reviewed.">
+  <!-- PRE-LAUNCH PREVIEW: remove this noindex tag at launch so search engines can index the site. -->
+  <meta name="robots" content="noindex">
+  <!-- Strict CSP: everything is self-hosted. The sha256 is the hash of the one inline boot script below;
+       if you edit that script, recompute the hash (see README). No inline styles are allowed. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-jJ7y64IVS4yYup75ptxA8pbQNmvatvslD+mgX8pu8YA='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#130f36">
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href="https://omramo.com/privacy/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Omramo">
+  <meta property="og:title" content="Privacy (draft) — Omramo">
+  <meta property="og:description" content="A plain-language draft of how Omramo intends to handle privacy: the app is designed to collect nothing. Not legal text and not yet reviewed.">
+  <meta property="og:url" content="https://omramo.com/privacy/">
+  <meta property="og:image" content="https://omramo.com/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Omramo — read your way around the world. Two panes of an illustrated story beside the Omramo wordmark.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/atkinson-hyperlegible-next.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>(function(d,w){d.classList.add('js');var s=/[?&]static=1/.test(w.location.search);if(s)d.classList.add('static');if(!s&&!w.matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('motion')})(document.documentElement,window)</script>
+  <script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-head">
+    <nav class="nav" aria-label="Main">
+      <a class="wordmark" href="/" aria-label="Omramo — home">OM<b class="grad">RA</b>MO</a>
+      <ul class="nav__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul>
+      <a class="btn btn--sun btn--sm" href="/#contact">Coming soon</a>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="page">
+      <div class="aurora aurora--soft" aria-hidden="true"></div>
+      <div class="prose__inner page__head">
+        <p class="eyebrow">Omramo · Draft</p>
+        <h1>Privacy</h1>
+        <p class="lede">A plain-language summary of the principles the app is being built on. The real policy will replace this page before launch.</p>
+        <div class="draft" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.3v.2"/></svg>
+          <div>
+            <strong>DRAFT — not legal text, not yet reviewed</strong>
+            <p>This page summarises intended principles only. It has not been reviewed by a lawyer and creates no rights or obligations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sheet light">
+      <div class="prose">
+        <div class="prose__inner">
+          <h2>The short version</h2>
+          <p>Omramo is designed to <strong>collect nothing</strong>. There is no account, no analytics, no advertising and no third-party code in the app.</p>
+
+          <h2>What the app is designed not to do</h2>
+          <ul>
+            <li><strong>No accounts.</strong> There is no sign-in and no Omramo account. No child profile leaves the device.</li>
+            <li><strong>No ads.</strong> The app shows no advertising of any kind.</li>
+            <li><strong>No tracking or analytics.</strong> The app sends no usage data anywhere and creates no advertising or tracking identifiers.</li>
+            <li><strong>No third-party code.</strong> The app is planned with no third-party software kits inside it.</li>
+            <li><strong>No notifications aimed at children.</strong> The first version does not ask for notification permission.</li>
+          </ul>
+
+          <h2>What stays on the device</h2>
+          <p>To work as a reader, the app keeps a small amount of information on the device itself. It is not sent to Omramo or to anyone else.</p>
+          <ul>
+            <li>The reading position in each story.</li>
+            <li>A reading log of which pages were read on which day. It holds no times of day and no durations.</li>
+            <li>Which tap-to-see words have been seen, which characters have been met and which stories are finished.</li>
+            <li>Appearance and text-size settings.</li>
+            <li>A local record that the subscription is active, so stories can be read offline.</li>
+          </ul>
+          <p>This information is part of the device’s normal backup, like other app data.</p>
+
+          <h2>Purchases</h2>
+          <p>The family subscription is planned to be bought through Apple, using your Apple ID. Apple handles the payment. A child is never shown a price or a buy button, and purchases, the parent view and every link out of the app sit behind a grown-up gate.</p>
+
+          <h2>Children’s privacy</h2>
+          <p>Omramo is made for readers aged 6 to 14 and up, which is why the design position is to collect nothing at all. That is a design position and <strong>not legal clearance</strong>: a review against children’s privacy rules, including COPPA in the United States, the GDPR in Europe and the UK children’s code, has not yet been carried out.</p>
+
+          <h2>This website</h2>
+          <p>This website sets no cookies, runs no analytics and loads nothing from third parties: fonts, images and scripts are all served from omramo.com. There are no forms. Like any website, the company that hosts these pages may keep standard server logs.</p>
+          <p class="todo">To do before launch: confirm the hosting provider and what it logs, and replace this draft with a reviewed policy.</p>
+
+          <h2>Contact</h2>
+          <!-- PLACEHOLDER: mailbox not confirmed -->
+          <p>Questions about privacy can be sent to <a href="mailto:hello@omramo.com">hello@omramo.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="site-foot__top">
+        <a class="wordmark" href="/" aria-label="Omramo — home">OM<b class="grad">RA</b>MO</a>
+        <ul class="site-foot__links">
+          <li><a href="/privacy/">Privacy (draft)</a></li>
+          <li><a href="/terms/">Terms (draft)</a></li>
+          <!-- PLACEHOLDER: mailbox not confirmed -->
+          <li><a href="mailto:hello@omramo.com">hello@omramo.com</a></li>
+        </ul>
+      </div>
+      <div class="site-foot__small">
+        <p>Omramo is in development and is not yet available. Screens show the app design in progress: illustrations are concept art, the numbers on them are sample data, and wording may change before launch.</p>
+        <p>This site uses no cookies, no analytics and no third-party requests. iPhone and iPad are trademarks of Apple Inc.</p>
+        <p>© 2026 Omramo</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
