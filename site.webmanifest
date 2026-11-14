@@ -1,7 +1,7 @@
 {
   "name": "Omramo",
   "short_name": "Omramo",
-  "description": "A magical book that you read.",
+  "description": "Read your way around the world.",
   "start_url": "/",
   "display": "browser",
   "background_color": "#0b0824",

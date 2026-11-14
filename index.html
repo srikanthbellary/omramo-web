@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Omramo — A magical book that you read</title>
-  <meta name="description" content="Omramo is an illustrated, game-like story reader for children who can already read: stories from ten regions of the world at three reading levels, designed for the two-pane iPhone Duo. Coming soon.">
+  <title>Omramo — Read your way around the world</title>
+  <meta name="description" content="Omramo is an illustrated story app for readers aged 6 to 14 and up, and anyone who loves stories. Tales from ten regions of the world at three reading levels, for iPhone, iPad and iPhone Duo. Coming soon.">
   <!-- PRE-LAUNCH PREVIEW: remove this noindex tag at launch so search engines can index the site. -->
   <meta name="robots" content="noindex">
   <!-- Strict CSP: everything is self-hosted. The sha256 is the hash of the one inline boot script below;
@@ -16,13 +16,13 @@
   <link rel="canonical" href="https://omramo.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Omramo">
-  <meta property="og:title" content="Omramo — A magical book that you read">
-  <meta property="og:description" content="Omramo is an illustrated, game-like story reader for children who can already read: stories from ten regions of the world at three reading levels, designed for the two-pane iPhone Duo. Coming soon.">
+  <meta property="og:title" content="Omramo — Read your way around the world">
+  <meta property="og:description" content="Omramo is an illustrated story app for readers aged 6 to 14 and up, and anyone who loves stories. Tales from ten regions of the world at three reading levels, for iPhone, iPad and iPhone Duo. Coming soon.">
   <meta property="og:url" content="https://omramo.com/">
   <meta property="og:image" content="https://omramo.com/assets/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Omramo — a magical book that you read. Two panes of an illustrated story beside the Omramo wordmark.">
+  <meta property="og:image:alt" content="Omramo — read your way around the world. Two panes of an illustrated story beside the Omramo wordmark.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
@@ -30,8 +30,6 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/atkinson-hyperlegible-next.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" media="(min-width: 641px)" imagesrcset="/assets/img/screens/03-read-low-l-360.webp 360w, /assets/img/screens/03-read-low-l-540.webp 540w, /assets/img/screens/03-read-low-l-800.webp 800w, /assets/img/screens/03-read-low-l-1080.webp 1080w" imagesizes="(min-width: 1800px) 590px, (min-width: 1261px) 532px, 43vw" fetchpriority="high">
-  <link rel="preload" as="image" type="image/webp" media="(max-width: 640px)" imagesrcset="/assets/img/screens/10-folded-f-360.webp 360w, /assets/img/screens/10-folded-f-540.webp 540w, /assets/img/screens/10-folded-f-800.webp 800w, /assets/img/screens/10-folded-f-1080.webp 1080w" imagesizes="296px" fetchpriority="high">
   <link rel="stylesheet" href="/assets/css/site.css">
   <script>(function(d,w){d.classList.add('js');var s=/[?&]static=1/.test(w.location.search);if(s)d.classList.add('static');if(!s&&!w.matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('motion')})(document.documentElement,window)</script>
   <script src="/assets/js/site.js" defer></script>
@@ -41,7 +39,7 @@
   <header class="site-head">
     <nav class="nav" aria-label="Main">
       <a class="wordmark" href="/" aria-label="Omramo — home">OM<b class="grad">RA</b>MO</a>
-      <ul class="nav__links">
+      <ul class="nav__links" data-nav>
         <li><a href="/#levels">Levels</a></li>
         <li><a href="/#world">World</a></li>
         <li><a href="/#landmarks">Landmarks</a></li>
@@ -50,44 +48,68 @@
         <li><a href="/#family">Family</a></li>
       </ul>
       <a class="btn btn--sun btn--sm" href="/#contact">Coming soon</a>
+      <details class="menu" data-menu>
+        <summary aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path class="menu__a" d="M5 8.5h14"/><path class="menu__b" d="M5 15.5h14"/></svg></summary>
+        <ul class="menu__list">
+          <li><a href="/#levels">Levels</a></li>
+          <li><a href="/#world">World</a></li>
+          <li><a href="/#landmarks">Landmarks</a></li>
+          <li><a href="/#tap">Tap to see</a></li>
+          <li><a href="/#grown-ups">Grown-ups</a></li>
+          <li><a href="/#family">Family</a></li>
+        </ul>
+      </details>
     </nav>
   </header>
 
   <main id="main">
 
     <!-- ============ Hero ============ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="aurora" aria-hidden="true"></div>
-      <div class="motes" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg></div>
-      <div class="wrap hero__copy">
-        <p class="pill"><i aria-hidden="true"></i>Coming soon · Made for iPhone Duo</p>
-        <h1 id="hero-title">A magical book <span class="grad">that you read.</span></h1>
-        <p class="lede">An illustrated story reader for children who can already read. Stories from ten regions of the world, at three reading levels, made for the two panes of iPhone Duo.</p>
-        <div class="hero__cta">
-          <a class="btn btn--sun" href="#levels">See how it reads <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+    <section class="hero" data-hero aria-labelledby="hero-title">
+      <div class="hero__track">
+      <div class="hero__stage">
+        <div class="aurora" aria-hidden="true"></div>
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="motes" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0q.8 7.2 8 8-7.2.8-8 8-.8-7.2-8-8 7.2-.8 8-8z"/></svg></div>
+        <div class="wrap hero__copy">
+          <p class="pill"><i aria-hidden="true"></i>Coming soon · iPhone, iPad and iPhone Duo</p>
+          <h1 id="hero-title">Read your way <span class="grad">around the world.</span></h1>
+          <p class="lede">Omramo is an illustrated story app for readers aged 6 to 14 and up, and anyone who loves stories. The reader does the reading. Ten regions of the world, three reading levels, made for iPhone, iPad and the two panes of iPhone Duo.</p>
+          <div class="hero__cta">
+            <a class="btn btn--sun" href="#tap">Try a tap-to-see word <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--ghost" href="#levels">See how it reads</a>
+          </div>
         </div>
-      </div>
-      <figure class="hero__device">
-        <div class="duo duo--wide" data-duo>
+        <figure class="hero__device">
+          <div class="duo duo--wide" data-duo data-hero-duo>
             <div class="duo__body">
-              <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source media="(max-width: 640px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><source type="image/webp" srcset="/assets/img/screens/03-read-low-l-360.webp 360w, /assets/img/screens/03-read-low-l-540.webp 540w, /assets/img/screens/03-read-low-l-800.webp 800w, /assets/img/screens/03-read-low-l-1080.webp 1080w" sizes="(min-width: 1800px) 590px, (min-width: 1261px) 532px, 43vw"><img src="/assets/img/screens/03-read-low-l-540.jpg" width="1296" height="2160" alt="The Omramo reading screen on the left pane: large story text beginning “A monkey lived in a great tree on a river bank”, with the words “river bank” highlighted as a tap-to-see word." fetchpriority="high" decoding="async"></picture></div></div>
+              <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source media="(max-width: 640px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><source type="image/webp" srcset="/assets/img/screens/03-read-low-l-360.webp 360w, /assets/img/screens/03-read-low-l-540.webp 540w, /assets/img/screens/03-read-low-l-800.webp 800w, /assets/img/screens/03-read-low-l-1080.webp 1080w" sizes="(min-width: 1180px) min(560px, calc(50vw - 270px)), 46vw"><img src="/assets/img/screens/03-read-low-l-540.jpg" width="1296" height="2160" alt="The Omramo reading screen on the left pane: large story text beginning “A monkey lived in a great tree on a river bank”, with the words “river bank” highlighted as a tap-to-see word." fetchpriority="high" decoding="async"></picture><i class="beacon beacon--1" aria-hidden="true">1</i><i class="beacon beacon--2" aria-hidden="true">2</i></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
-              <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source media="(max-width: 640px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><source type="image/webp" srcset="/assets/img/screens/03-read-low-r-360.webp 360w, /assets/img/screens/03-read-low-r-540.webp 540w, /assets/img/screens/03-read-low-r-800.webp 800w, /assets/img/screens/03-read-low-r-1080.webp 1080w" sizes="(min-width: 1800px) 590px, (min-width: 1261px) 532px, 43vw"><img src="/assets/img/screens/03-read-low-r-540.jpg" width="1296" height="2160" alt="The right pane continues the same river scene: a monkey sits on a banyan branch, a crocodile waits in the water, and a round page-turn button sits in the corner." fetchpriority="high" decoding="async"></picture></div></div>
+              <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source media="(max-width: 640px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><source type="image/webp" srcset="/assets/img/screens/03-read-low-r-360.webp 360w, /assets/img/screens/03-read-low-r-540.webp 540w, /assets/img/screens/03-read-low-r-800.webp 800w, /assets/img/screens/03-read-low-r-1080.webp 1080w" sizes="(min-width: 1180px) min(560px, calc(50vw - 270px)), 46vw"><img src="/assets/img/screens/03-read-low-r-540.jpg" width="1296" height="2160" alt="The right pane continues the same river scene: a monkey sits on a banyan branch, a crocodile waits in the water, and a round page-turn button sits in the corner." fetchpriority="high" decoding="async"></picture><i class="beacon beacon--3" aria-hidden="true">3</i></div></div>
             </div>
           </div>
-        <div class="duo duo--phone " data-duo>
+          <div class="duo duo--phone" data-duo>
             <div class="duo__body">
-              <div class="duo__half"><div class="duo__screen"><picture><source media="(min-width: 641px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><source type="image/webp" srcset="/assets/img/screens/10-folded-f-360.webp 360w, /assets/img/screens/10-folded-f-540.webp 540w, /assets/img/screens/10-folded-f-800.webp 800w, /assets/img/screens/10-folded-f-1080.webp 1080w" sizes="296px"><img src="/assets/img/screens/10-folded-f-540.jpg" width="1296" height="2160" alt="The Omramo reading screen on a folded phone: a monkey rides on a crocodile’s back above large story text, with a page indicator reading 5 / 14." fetchpriority="high" decoding="async"></picture></div></div>
+              <div class="duo__half"><div class="duo__screen"><picture><source media="(min-width: 641px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><source type="image/webp" srcset="/assets/img/screens/10-folded-f-360.webp 360w, /assets/img/screens/10-folded-f-540.webp 540w, /assets/img/screens/10-folded-f-800.webp 800w, /assets/img/screens/10-folded-f-1080.webp 1080w" sizes="296px"><img src="/assets/img/screens/10-folded-f-540.jpg" width="1296" height="2160" alt="The Omramo reading screen on a folded phone: a monkey rides on a crocodile’s back above large story text, with a page indicator reading 5 / 14." fetchpriority="high" decoding="async"></picture><i class="beacon beacon--1" aria-hidden="true">1</i><i class="beacon beacon--2" aria-hidden="true">2</i><i class="beacon beacon--3" aria-hidden="true">3</i></div></div>
             </div>
           </div>
-      </figure>
-      <div class="wrap">
-        <dl class="facts reveal">
-          <div><dt>10</dt><dd>world regions, in every reading level</dd></div>
-          <div><dt>3</dt><dd>reading levels: Low, Medium and Advanced</dd></div>
-          <div><dt>0</dt><dd>ads, accounts or trackers</dd></div>
-        </dl>
+          <figcaption>
+            <ol class="callouts">
+              <li class="callout callout--1"><i class="callout__n" aria-hidden="true">1</i><strong>Tap a marked word</strong><span>A picture opens, then one button takes you back to your line.</span></li>
+              <li class="callout callout--2"><i class="callout__n" aria-hidden="true">2</i><strong>Tap a name</strong><span>Meet the character you are reading about.</span></li>
+              <li class="callout callout--3"><i class="callout__n" aria-hidden="true">3</i><strong>Press to turn</strong><span>The page never turns by itself.</span></li>
+            </ol>
+          </figcaption>
+        </figure>
+      </div>
+      </div>
+      <div class="wrap hero__strip">
+        <ul class="strip reveal">
+          <li><b>Ages 6 to 14 and up</b><span>and anyone who loves stories</span></li>
+          <li><b>Ten world regions</b><span>in every reading level</span></li>
+          <li><b>Three reading levels</b><span>Low, Medium and Advanced</span></li>
+          <li><b>Nothing collected</b><span>no ads, no accounts, no tracking</span></li>
+        </ul>
       </div>
     </section>
 
@@ -96,23 +118,26 @@
       <div class="wrap">
         <h2 class="eyebrow reveal" id="why-title">Why it exists</h2>
         <p class="statement" data-words>No narration. No video. No autoplay. The page turns only when the reader presses the button, because <span class="grad">the child reading the words is the whole point.</span></p>
-        <ul class="principles">
-          <li class="card reveal">
-            <div class="swatch swatch--river" aria-hidden="true"></div>
+        <ol class="tenets">
+          <li class="reveal">
+            <span class="tenets__n" aria-hidden="true">01</span>
             <h3>The page is a place</h3>
             <p>Every spread is one continuous scene running under both panes. The words sit in the calm part of the picture: sky, twilight, sea haze.</p>
+            <span class="swatch swatch--river" aria-hidden="true"></span>
           </li>
-          <li class="card reveal d1">
-            <div class="swatch swatch--dusk" aria-hidden="true"></div>
+          <li class="reveal">
+            <span class="tenets__n" aria-hidden="true">02</span>
             <h3>Each story has its own light</h3>
             <p>A bright river morning. A twilight forest. A pale sea. The buttons stay the same, so a child always knows where they are.</p>
+            <span class="swatch swatch--dusk" aria-hidden="true"></span>
           </li>
-          <li class="card reveal d2">
-            <div class="swatch swatch--sea" aria-hidden="true"></div>
+          <li class="reveal">
+            <span class="tenets__n" aria-hidden="true">03</span>
             <h3>Pictures serve the words</h3>
             <p>Illustration and tap-to-see pictures are there to pull a child into the text, and to send them back to it. Nothing plays by itself.</p>
+            <span class="swatch swatch--sea" aria-hidden="true"></span>
           </li>
-        </ul>
+        </ol>
       </div>
     </section>
 
@@ -126,103 +151,78 @@
           <p class="lede reveal d2">Every story is written for one level, chosen for its message. One subscription covers all three, and a child can read at any level, at any time.</p>
         </header>
 
-        <div class="switch" data-switch>
-          <div class="switch__tabs">
-            <div class="seg" role="tablist" aria-label="Reading level">
-              <button type="button" class="t-low" role="tab" id="tab-low" aria-controls="panel-low" aria-selected="true"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span> Low</button>
-              <button type="button" class="t-med" role="tab" id="tab-med" aria-controls="panel-med" aria-selected="false" tabindex="-1"><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span> Medium</button>
-              <button type="button" class="t-adv" role="tab" id="tab-adv" aria-controls="panel-adv" aria-selected="false" tabindex="-1"><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span> Advanced</button>
+        <div class="tiers" data-tiers role="group" aria-label="The three reading levels">
+          <div class="tier tier--low" data-tier>
+            <div class="tier__copy">
+              <span class="tierpill tierpill--low"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span> Low</span>
+              <h3>For newer independent readers.</h3>
+              <p>Big, generous type and short pages. The words stay on one pane while the scene stretches across both, so the picture is always beside the sentence it belongs to.</p>
+              <dl class="specs"><div><dd>≈55</dd><dt>words a page</dt></div><div><dd>23.5 pt</dd><dt>reading type</dt></div><div><dd>1 pane</dd><dt>of text</dt></div></dl>
+              <p class="story story--low"><b>The Monkey and the Crocodile</b><span>A Jataka tale from ancient India</span></p>
             </div>
-          </div>
-          <div class="switch__panels">
-            <div class="switch__panel split is-active" id="panel-low" data-tab="tab-low">
-              <div class="split__copy">
-                <span class="tierpill tierpill--low"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span> Low</span>
-                <h3>For newer independent readers.</h3>
-                <p>Big, generous type and short pages. The words stay on one pane while the scene stretches across both, so the picture is always beside the sentence it belongs to.</p>
-                <dl class="specs">
-                  <div><dd>≈55</dd><dt>words a page</dt></div>
-                  <div><dd>23.5 pt</dd><dt>reading type</dt></div>
-                  <div><dd>1 pane</dd><dt>of text</dt></div>
-                </dl>
-                <p class="story story--low"><b>The Monkey and the Crocodile</b><span>A Jataka tale from ancient India</span></p>
-              </div>
-              <figure class="split__media">
-                <div class="duo " data-m="l" data-duo>
+            <figure class="tier__fig">
+              <div class="duo" data-m="l" >
             <div class="duo__body">
               <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/03-read-low-l-360.webp 360w, /assets/img/screens/03-read-low-l-540.webp 540w, /assets/img/screens/03-read-low-l-800.webp 800w, /assets/img/screens/03-read-low-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/03-read-low-l-540.jpg" width="1296" height="2160" alt="Low level reading page with large text: “A monkey lived in a great tree on a river bank.”" loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
               <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/03-read-low-r-360.webp 360w, /assets/img/screens/03-read-low-r-540.webp 540w, /assets/img/screens/03-read-low-r-800.webp 800w, /assets/img/screens/03-read-low-r-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/03-read-low-r-540.jpg" width="1296" height="2160" alt="The facing pane: a monkey on a banyan branch above a river, with a crocodile in the water below." loading="lazy" decoding="async"></picture></div></div>
             </div>
           </div>
-              </figure>
+            </figure>
+          </div>
+          <div class="tier tier--med" data-tier>
+            <div class="tier__copy">
+              <span class="tierpill tierpill--med"><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span> Medium</span>
+              <h3>For confident readers, and a bigger idea.</h3>
+              <p>A little smaller, a little longer. Character names carry a dotted underline, and each voice has its own colour, so a reader can follow who is speaking.</p>
+              <dl class="specs"><div><dd>≈90</dd><dt>words a page</dt></div><div><dd>19.5 pt</dd><dt>reading type</dt></div><div><dd>1 pane</dd><dt>of text</dt></div></dl>
+              <p class="story story--med"><b>How Wisdom Became the Property of the Human Race</b><span>An Anansi story from the Akan people of Ghana</span></p>
             </div>
-
-            <div class="switch__panel split" id="panel-med" data-tab="tab-med">
-              <div class="split__copy">
-                <span class="tierpill tierpill--med"><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span> Medium</span>
-                <h3>For confident readers, and a bigger idea.</h3>
-                <p>A little smaller, a little longer. Character names carry a dotted underline, and each voice has its own colour, so a reader can follow who is speaking.</p>
-                <dl class="specs">
-                  <div><dd>≈90</dd><dt>words a page</dt></div>
-                  <div><dd>19.5 pt</dd><dt>reading type</dt></div>
-                  <div><dd>1 pane</dd><dt>of text</dt></div>
-                </dl>
-                <p class="story story--med"><b>How Wisdom Became the Property of the Human Race</b><span>An Anansi story from the Akan people of Ghana</span></p>
-              </div>
-              <figure class="split__media">
-                <div class="duo " data-m="l" data-duo>
+            <figure class="tier__fig">
+              <div class="duo" data-m="l" >
             <div class="duo__body">
               <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/04-read-medium-l-360.webp 360w, /assets/img/screens/04-read-medium-l-540.webp 540w, /assets/img/screens/04-read-medium-l-800.webp 800w, /assets/img/screens/04-read-medium-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/04-read-medium-l-540.jpg" width="1296" height="2160" alt="Medium level reading page set in a twilight forest, with light text beginning “Now, Father Anansi had a son, whose name was Kweku Tsin.”" loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
               <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/04-read-medium-r-360.webp 360w, /assets/img/screens/04-read-medium-r-540.webp 540w, /assets/img/screens/04-read-medium-r-800.webp 800w, /assets/img/screens/04-read-medium-r-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/04-read-medium-r-540.jpg" width="1296" height="2160" alt="The facing pane: Father Anansi climbs a tall tree under a full moon, carrying a glowing pot." loading="lazy" decoding="async"></picture></div></div>
             </div>
           </div>
-              </figure>
+            </figure>
+          </div>
+          <div class="tier tier--adv" data-tier>
+            <div class="tier__copy">
+              <span class="tierpill tierpill--adv"><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span> Advanced</span>
+              <h3>For strong readers who want depth.</h3>
+              <p>Longer text flows across both panes and around the picture. In one place on a page, the words themselves become art, like a name called across the waves.</p>
+              <dl class="specs"><div><dd>≈190</dd><dt>words a page</dt></div><div><dd>16.5 pt</dd><dt>reading type</dt></div><div><dd>2 panes</dd><dt>of text</dt></div></dl>
+              <p class="story story--adv"><b>The Story of Urashima Taro</b><span>A tale from Japan</span></p>
             </div>
-
-            <div class="switch__panel split" id="panel-adv" data-tab="tab-adv">
-              <div class="split__copy">
-                <span class="tierpill tierpill--adv"><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span> Advanced</span>
-                <h3>For strong readers who want depth.</h3>
-                <p>Longer text flows across both panes and around the picture. In one place on a page, the words themselves become art, like a name called across the waves.</p>
-                <dl class="specs">
-                  <div><dd>≈190</dd><dt>words a page</dt></div>
-                  <div><dd>16.5 pt</dd><dt>reading type</dt></div>
-                  <div><dd>2 panes</dd><dt>of text</dt></div>
-                </dl>
-                <p class="story story--adv"><b>The Story of Urashima Taro</b><span>A tale from Japan</span></p>
-              </div>
-              <figure class="split__media">
-                <div class="duo " data-m="l" data-duo>
+            <figure class="tier__fig">
+              <div class="duo" data-m="r" >
             <div class="duo__body">
               <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/05-read-advanced-l-360.webp 360w, /assets/img/screens/05-read-advanced-l-540.webp 540w, /assets/img/screens/05-read-advanced-l-800.webp 800w, /assets/img/screens/05-read-advanced-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/05-read-advanced-l-540.jpg" width="1296" height="2160" alt="Advanced level reading page with denser text from The Story of Urashima Taro over a pale sea haze." loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
               <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/05-read-advanced-r-360.webp 360w, /assets/img/screens/05-read-advanced-r-540.webp 540w, /assets/img/screens/05-read-advanced-r-800.webp 800w, /assets/img/screens/05-read-advanced-r-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/05-read-advanced-r-540.jpg" width="1296" height="2160" alt="The story continues on the second pane: the call “Urashima, Urashima!” curves along a wave above a fisherman in his boat and a tortoise in the sea." loading="lazy" decoding="async"></picture></div></div>
             </div>
           </div>
-              </figure>
-            </div>
+            </figure>
           </div>
         </div>
 
-        <ul class="words">
-          <li class="card reveal">
-            <p class="sample" aria-hidden="true">tree on a <span class="w-tap">river bank</span>.</p>
-            <h4>Words you can tap</h4>
-            <p>A soft highlight, an underline and a small spark mark a word that has a picture behind it.</p>
-          </li>
-          <li class="card reveal d1">
-            <p class="sample" aria-hidden="true">A <span class="w-name">Crocodile</span> said: <span class="w-say">“My son…”</span></p>
-            <h4>Names and voices</h4>
-            <p>Character names get a dotted underline. Each voice gets its own colour and a small face where it starts.</p>
-          </li>
-          <li class="card reveal d2">
-            <p class="sample" aria-hidden="true">up he ran, <span class="w-pop">whisk!</span></p>
-            <h4>Words that sound like themselves</h4>
-            <p>Sound and motion words are set large in the display face. Marked words never rely on colour alone.</p>
-          </li>
-        </ul>
+        <div class="specimen reveal">
+          <div class="specimen__type" aria-hidden="true">
+            <p>tree on a <span class="w-tap">river bank</span>.</p>
+            <p>A <span class="w-name">Crocodile</span> said: <span class="w-say">“My son…”</span></p>
+            <p>up he ran, <span class="w-pop">whisk!</span></p>
+          </div>
+          <div class="specimen__key">
+            <h3>The words do the pointing.</h3>
+            <dl>
+              <div><dt>Words you can tap</dt><dd>A soft highlight, an underline and a small spark mark a word that has a picture behind it.</dd></div>
+              <div><dt>Names and voices</dt><dd>Character names get a dotted underline. Each voice gets its own colour and a small face where it starts.</dd></div>
+              <div><dt>Words that sound like themselves</dt><dd>Sound and motion words are set large in the display face. Marked words never rely on colour alone.</dd></div>
+            </dl>
+          </div>
+        </div>
       </div>
     </section>
     </div>
@@ -231,62 +231,61 @@
     <section class="section" id="world" aria-labelledby="world-title">
       <div class="aurora aurora--soft aurora--mid" aria-hidden="true"></div>
       <div class="wrap">
-        <header class="section__head">
-          <p class="eyebrow reveal">Where the stories come from</p>
-          <h2 class="reveal d1" id="world-title">Ten regions of the world, at every level.</h2>
-          <p class="lede reveal d2">A region is only a shelf label. Every story names a real people and a real place, and carries its geography, its culture and a moral worth thinking about.</p>
-        </header>
+        <div class="world__head">
+          <header class="section__head">
+            <p class="eyebrow reveal">Where the stories come from</p>
+            <h2 class="reveal d1" id="world-title">Ten regions of the world, at every level.</h2>
+            <p class="lede reveal d2">A region is only a shelf label. Every story names a real people and a real place.</p>
+          </header>
+          <dl class="carries reveal d2">
+            <div>
+              <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Geography</dt>
+              <dd>Where the story lives: land, water, climate and its pin on the map.</dd>
+            </div>
+            <div>
+              <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M17 14.6c2.4.2 4 1.7 4.5 4.4"/></svg>Culture</dt>
+              <dd>How people there live, make and celebrate, told in short notes on the picture cards.</dd>
+            </div>
+            <div>
+              <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg>A moral</dt>
+              <dd>Carried by the story itself. Never printed as “Moral:”, and never a quiz.</dd>
+            </div>
+          </dl>
+        </div>
 
-        <div class="world">
-          <div class="map reveal" data-map>
+        <div class="atlas reveal" data-map>
+          <div class="atlas__map">
             <div class="map__stage">
               <svg viewBox="0 0 1000 540" role="img" aria-label="A stylised dotted world map with ten numbered pins, one for each story region listed below.">
                 <path class="map__dots" d="M143 26h0M157 26h0M171 26h0M186 26h0M200 26h0M214 26h0M229 26h0M243 26h0M257 26h0M329 26h0M343 26h0M357 26h0M371 26h0M386 26h0M400 26h0M414 26h0M429 26h0M743 26h0M757 26h0M771 26h0M786 26h0M800 26h0M29 45h0M43 45h0M57 45h0M71 45h0M86 45h0M100 45h0M114 45h0M129 45h0M143 45h0M157 45h0M171 45h0M186 45h0M200 45h0M214 45h0M229 45h0M243 45h0M343 45h0M357 45h0M371 45h0M386 45h0M400 45h0M414 45h0M543 45h0M557 45h0M571 45h0M657 45h0M671 45h0M686 45h0M700 45h0M714 45h0M729 45h0M743 45h0M757 45h0M771 45h0M786 45h0M800 45h0M814 45h0M829 45h0M843 45h0M857 45h0M871 45h0M886 45h0M900 45h0M914 45h0M929 45h0M943 45h0M957 45h0M971 45h0M986 45h0M1000 45h0M14 64h0M29 64h0M43 64h0M57 64h0M71 64h0M86 64h0M100 64h0M114 64h0M129 64h0M143 64h0M157 64h0M171 64h0M186 64h0M200 64h0M214 64h0M229 64h0M243 64h0M257 64h0M271 64h0M286 64h0M300 64h0M343 64h0M357 64h0M371 64h0M429 64h0M443 64h0M514 64h0M529 64h0M543 64h0M557 64h0M571 64h0M586 64h0M600 64h0M614 64h0M629 64h0M643 64h0M657 64h0M671 64h0M686 64h0M700 64h0M714 64h0M729 64h0M743 64h0M757 64h0M771 64h0M786 64h0M800 64h0M814 64h0M829 64h0M843 64h0M857 64h0M871 64h0M886 64h0M900 64h0M914 64h0M929 64h0M943 64h0M957 64h0M971 64h0M986 64h0M1000 64h0M29 84h0M43 84h0M57 84h0M71 84h0M86 84h0M100 84h0M114 84h0M129 84h0M143 84h0M157 84h0M171 84h0M186 84h0M200 84h0M214 84h0M271 84h0M286 84h0M300 84h0M357 84h0M500 84h0M514 84h0M529 84h0M543 84h0M557 84h0M571 84h0M571 84h0M586 84h0M600 84h0M614 84h0M629 84h0M643 84h0M657 84h0M671 84h0M686 84h0M700 84h0M714 84h0M729 84h0M743 84h0M757 84h0M771 84h0M786 84h0M800 84h0M814 84h0M829 84h0M843 84h0M857 84h0M871 84h0M886 84h0M900 84h0M914 84h0M929 84h0M943 84h0M957 84h0M114 103h0M129 103h0M143 103h0M157 103h0M171 103h0M186 103h0M200 103h0M214 103h0M229 103h0M243 103h0M257 103h0M271 103h0M286 103h0M300 103h0M314 103h0M471 103h0M486 103h0M514 103h0M529 103h0M543 103h0M557 103h0M571 103h0M586 103h0M600 103h0M614 103h0M629 103h0M643 103h0M657 103h0M671 103h0M686 103h0M700 103h0M714 103h0M729 103h0M743 103h0M757 103h0M771 103h0M786 103h0M800 103h0M814 103h0M829 103h0M843 103h0M857 103h0M871 103h0M886 103h0M900 103h0M914 103h0M929 103h0M943 103h0M129 123h0M143 123h0M157 123h0M171 123h0M186 123h0M200 123h0M214 123h0M229 123h0M243 123h0M257 123h0M271 123h0M286 123h0M300 123h0M314 123h0M471 123h0M486 123h0M500 123h0M514 123h0M529 123h0M543 123h0M557 123h0M571 123h0M586 123h0M600 123h0M614 123h0M629 123h0M643 123h0M657 123h0M671 123h0M686 123h0M700 123h0M714 123h0M729 123h0M743 123h0M757 123h0M771 123h0M786 123h0M800 123h0M814 123h0M829 123h0M843 123h0M857 123h0M871 123h0M886 123h0M143 142h0M157 142h0M171 142h0M186 142h0M200 142h0M214 142h0M229 142h0M243 142h0M257 142h0M271 142h0M286 142h0M300 142h0M486 142h0M500 142h0M514 142h0M529 142h0M543 142h0M557 142h0M571 142h0M586 142h0M600 142h0M614 142h0M629 142h0M643 142h0M657 142h0M671 142h0M686 142h0M700 142h0M714 142h0M729 142h0M743 142h0M757 142h0M771 142h0M786 142h0M800 142h0M814 142h0M829 142h0M843 142h0M857 142h0M871 142h0M886 142h0M143 161h0M157 161h0M171 161h0M186 161h0M200 161h0M214 161h0M229 161h0M243 161h0M257 161h0M271 161h0M471 161h0M486 161h0M514 161h0M529 161h0M543 161h0M557 161h0M571 161h0M586 161h0M600 161h0M614 161h0M629 161h0M643 161h0M657 161h0M671 161h0M686 161h0M700 161h0M714 161h0M729 161h0M743 161h0M757 161h0M771 161h0M786 161h0M800 161h0M814 161h0M829 161h0M843 161h0M886 161h0M143 181h0M157 181h0M171 181h0M186 181h0M200 181h0M214 181h0M229 181h0M243 181h0M257 181h0M471 181h0M486 181h0M500 181h0M514 181h0M571 181h0M586 181h0M600 181h0M614 181h0M629 181h0M643 181h0M657 181h0M671 181h0M686 181h0M700 181h0M714 181h0M729 181h0M743 181h0M757 181h0M771 181h0M786 181h0M800 181h0M814 181h0M829 181h0M871 181h0M886 181h0M157 200h0M171 200h0M186 200h0M200 200h0M214 200h0M229 200h0M243 200h0M471 200h0M486 200h0M500 200h0M514 200h0M529 200h0M543 200h0M557 200h0M571 200h0M586 200h0M600 200h0M614 200h0M629 200h0M643 200h0M657 200h0M671 200h0M686 200h0M700 200h0M714 200h0M729 200h0M743 200h0M757 200h0M771 200h0M786 200h0M800 200h0M814 200h0M829 200h0M171 220h0M186 220h0M200 220h0M257 220h0M457 220h0M471 220h0M486 220h0M500 220h0M514 220h0M529 220h0M543 220h0M557 220h0M571 220h0M586 220h0M600 220h0M614 220h0M629 220h0M643 220h0M657 220h0M671 220h0M686 220h0M700 220h0M714 220h0M729 220h0M743 220h0M757 220h0M771 220h0M786 220h0M800 220h0M814 220h0M186 239h0M200 239h0M214 239h0M229 239h0M443 239h0M457 239h0M471 239h0M486 239h0M500 239h0M514 239h0M529 239h0M543 239h0M557 239h0M571 239h0M586 239h0M600 239h0M614 239h0M629 239h0M686 239h0M700 239h0M714 239h0M729 239h0M743 239h0M757 239h0M771 239h0M786 239h0M214 258h0M229 258h0M243 258h0M443 258h0M457 258h0M471 258h0M486 258h0M500 258h0M514 258h0M529 258h0M543 258h0M557 258h0M571 258h0M586 258h0M600 258h0M614 258h0M700 258h0M714 258h0M757 258h0M771 258h0M786 258h0M829 258h0M243 278h0M257 278h0M271 278h0M286 278h0M300 278h0M443 278h0M457 278h0M471 278h0M486 278h0M500 278h0M514 278h0M529 278h0M543 278h0M557 278h0M571 278h0M586 278h0M600 278h0M614 278h0M629 278h0M714 278h0M771 278h0M786 278h0M843 278h0M271 297h0M286 297h0M300 297h0M314 297h0M329 297h0M471 297h0M486 297h0M500 297h0M514 297h0M529 297h0M543 297h0M557 297h0M571 297h0M586 297h0M600 297h0M614 297h0M771 297h0M786 297h0M800 297h0M814 297h0M257 317h0M271 317h0M286 317h0M300 317h0M314 317h0M329 317h0M343 317h0M514 317h0M529 317h0M543 317h0M557 317h0M571 317h0M586 317h0M600 317h0M771 317h0M800 317h0M814 317h0M829 317h0M843 317h0M857 317h0M257 336h0M271 336h0M286 336h0M300 336h0M314 336h0M329 336h0M343 336h0M357 336h0M371 336h0M529 336h0M543 336h0M557 336h0M571 336h0M586 336h0M600 336h0M786 336h0M800 336h0M829 336h0M843 336h0M857 336h0M871 336h0M886 336h0M900 336h0M914 336h0M271 355h0M286 355h0M300 355h0M314 355h0M329 355h0M343 355h0M357 355h0M371 355h0M529 355h0M543 355h0M557 355h0M571 355h0M586 355h0M600 355h0M900 355h0M286 375h0M300 375h0M314 375h0M329 375h0M343 375h0M357 375h0M371 375h0M529 375h0M543 375h0M557 375h0M571 375h0M586 375h0M600 375h0M629 375h0M843 375h0M857 375h0M871 375h0M886 375h0M900 375h0M286 394h0M300 394h0M314 394h0M329 394h0M343 394h0M357 394h0M371 394h0M529 394h0M543 394h0M557 394h0M571 394h0M586 394h0M614 394h0M629 394h0M829 394h0M843 394h0M857 394h0M871 394h0M886 394h0M900 394h0M286 414h0M300 414h0M314 414h0M329 414h0M343 414h0M529 414h0M543 414h0M557 414h0M571 414h0M614 414h0M814 414h0M829 414h0M843 414h0M857 414h0M871 414h0M886 414h0M900 414h0M914 414h0M286 433h0M300 433h0M314 433h0M329 433h0M543 433h0M557 433h0M571 433h0M829 433h0M843 433h0M857 433h0M871 433h0M886 433h0M900 433h0M914 433h0M286 452h0M300 452h0M314 452h0M329 452h0M543 452h0M557 452h0M829 452h0M886 452h0M900 452h0M914 452h0M286 472h0M300 472h0M900 472h0M986 472h0M286 491h0M971 491h0M286 510h0"/>
+                <path class="map__route" d="M489 286Q520 235 571 215Q605 190 640 197Q680 200 709 235Q760 190 794 185Q840 160 880 173Q790 90 663 92Q580 85 514 130Q370 20 223 53Q190 100 203 158"/>
               </svg>
-              <span class="pin pin--1" data-pin="1" aria-hidden="true">1</span>
-              <span class="pin pin--2" data-pin="2" aria-hidden="true">2</span>
-              <span class="pin pin--3" data-pin="3" aria-hidden="true">3</span>
-              <span class="pin pin--4" data-pin="4" aria-hidden="true">4</span>
-              <span class="pin pin--5" data-pin="5" aria-hidden="true">5</span>
-              <span class="pin pin--6" data-pin="6" aria-hidden="true">6</span>
-              <span class="pin pin--7" data-pin="7" aria-hidden="true">7</span>
-              <span class="pin pin--8" data-pin="8" aria-hidden="true">8</span>
-              <span class="pin pin--9" data-pin="9" aria-hidden="true">9</span>
-              <span class="pin pin--10" data-pin="10" aria-hidden="true">10</span>
+              <span class="pin pin--1" data-pin="1" aria-hidden="true">1<b class="pin__label pin__label--b">Indian</b></span>
+              <span class="pin pin--2" data-pin="2" aria-hidden="true">2<b class="pin__label pin__label--l">Egyptian</b></span>
+              <span class="pin pin--3" data-pin="3" aria-hidden="true">3<b class="pin__label pin__label--r">Japanese</b></span>
+              <span class="pin pin--4" data-pin="4" aria-hidden="true">4<b class="pin__label pin__label--t">Chinese</b></span>
+              <span class="pin pin--5" data-pin="5" aria-hidden="true">5<b class="pin__label pin__label--b">Native American</b></span>
+              <span class="pin pin--6" data-pin="6" aria-hidden="true">6<b class="pin__label pin__label--r">Arctic</b></span>
+              <span class="pin pin--7" data-pin="7" aria-hidden="true">7<b class="pin__label pin__label--t">Russian</b></span>
+              <span class="pin pin--8" data-pin="8" aria-hidden="true">8<b class="pin__label pin__label--l">European</b></span>
+              <span class="pin pin--9" data-pin="9" aria-hidden="true">9<b class="pin__label pin__label--b">African</b></span>
+              <span class="pin pin--10" data-pin="10" aria-hidden="true">10<b class="pin__label pin__label--t">Persian / Arabian</b></span>
             </div>
           </div>
           <ol class="regions" aria-label="The ten story regions">
-            <li class="region region--1" data-region="1"><span class="region__n" aria-hidden="true">1</span><h3>Indian</h3><p>India. Home of <cite>The Monkey and the Crocodile</cite>, a Jataka tale.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--2" data-region="2"><span class="region__n" aria-hidden="true">2</span><h3>Egyptian</h3><p>Tales from ancient Egypt.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--3" data-region="3"><span class="region__n" aria-hidden="true">3</span><h3>Japanese</h3><p>Japan. Home of <cite>The Story of Urashima Taro</cite>.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--4" data-region="4"><span class="region__n" aria-hidden="true">4</span><h3>Chinese</h3><p>Tales and a ballad from China.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--5" data-region="5"><span class="region__n" aria-hidden="true">5</span><h3>Native American</h3><p>First Nations too. Each story names its nation, such as Cherokee or Dakota.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--6" data-region="6"><span class="region__n" aria-hidden="true">6</span><h3>Arctic</h3><p>Inuit and Yup’ik homelands, from Alaska to Greenland.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--7" data-region="7"><span class="region__n" aria-hidden="true">7</span><h3>Russian</h3><p>Folk tales and legends from Russia.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--8" data-region="8"><span class="region__n" aria-hidden="true">8</span><h3>European</h3><p>German, Greek and Roman tales.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--9" data-region="9"><span class="region__n" aria-hidden="true">9</span><h3>African</h3><p>Peoples named one by one, such as the Akan of Ghana, home of an Anansi story.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
-            <li class="region region--10" data-region="10"><span class="region__n" aria-hidden="true">10</span><h3>Persian / Arabian</h3><p>Persian and Arabic tales.</p><span class="region__levels"><span class="glyph glyph--1" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--2" aria-hidden="true"><i></i><i></i><i></i></span><span class="glyph glyph--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="vh">A story at each level: Low, Medium and Advanced.</span></span></li>
+            <li class="region region--1" data-region="1"><span class="region__n" aria-hidden="true">1</span><h3>Indian</h3><p>India. Home of <cite>The Monkey and the Crocodile</cite>, a Jataka tale.</p></li>
+            <li class="region region--2" data-region="2"><span class="region__n" aria-hidden="true">2</span><h3>Egyptian</h3><p>Tales from ancient Egypt.</p></li>
+            <li class="region region--3" data-region="3"><span class="region__n" aria-hidden="true">3</span><h3>Japanese</h3><p>Japan. Home of <cite>The Story of Urashima Taro</cite>.</p></li>
+            <li class="region region--4" data-region="4"><span class="region__n" aria-hidden="true">4</span><h3>Chinese</h3><p>Tales and a ballad from China.</p></li>
+            <li class="region region--5" data-region="5"><span class="region__n" aria-hidden="true">5</span><h3>Native American</h3><p>First Nations too. Each story names its nation, such as Cherokee or Dakota.</p></li>
+            <li class="region region--6" data-region="6"><span class="region__n" aria-hidden="true">6</span><h3>Arctic</h3><p>Inuit and Yup’ik homelands, from Alaska to Greenland.</p></li>
+            <li class="region region--7" data-region="7"><span class="region__n" aria-hidden="true">7</span><h3>Russian</h3><p>Folk tales and legends from Russia.</p></li>
+            <li class="region region--8" data-region="8"><span class="region__n" aria-hidden="true">8</span><h3>European</h3><p>German, Greek and Roman tales.</p></li>
+            <li class="region region--9" data-region="9"><span class="region__n" aria-hidden="true">9</span><h3>African</h3><p>Peoples named one by one, such as the Akan of Ghana, home of an Anansi story.</p></li>
+            <li class="region region--10" data-region="10"><span class="region__n" aria-hidden="true">10</span><h3>Persian / Arabian</h3><p>Persian and Arabic tales.</p></li>
           </ol>
-          <p class="note">The launch catalogue is still being written and reviewed; peoples and places shown here follow the current plan and may change. Stories from living traditions are reviewed with people from those communities before release. The map is a stylised drawing, not a survey.</p>
         </div>
-
-        <ul class="pillars">
-          <li class="card reveal">
-            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></div>
-            <h3>Geography</h3>
-            <p>Where the story lives: land, water, climate and its pin on the map.</p>
-          </li>
-          <li class="card reveal d1">
-            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M17 14.6c2.4.2 4 1.7 4.5 4.4"/></svg></div>
-            <h3>Culture</h3>
-            <p>How people there live, make and celebrate, told in short notes on the picture cards.</p>
-          </li>
-          <li class="card reveal d2">
-            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg></div>
-            <h3>Moral</h3>
-            <p>Carried by the story itself. Never printed as “Moral:”, and never a quiz.</p>
-          </li>
-        </ul>
+        <p class="note atlas__note">Every region has stories at all three levels. The launch catalogue is still being written and reviewed; peoples and places shown here follow the current plan and may change. Stories from living traditions are reviewed with people from those communities before release. The map is a stylised drawing, not a survey.</p>
       </div>
     </section>
 
@@ -303,7 +302,7 @@
           </ul>
         </div>
         <figure class="split__media">
-          <div class="duo " data-m="r" data-duo>
+          <div class="duo" data-m="r" data-duo>
             <div class="duo__body">
               <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/02-library-home-l-360.webp 360w, /assets/img/screens/02-library-home-l-540.webp 540w, /assets/img/screens/02-library-home-l-800.webp 800w, /assets/img/screens/02-library-home-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/02-library-home-l-540.jpg" width="1296" height="2160" alt="Library home with a “Keep reading” card for The Story of Urashima Taro and story covers filtered by level." loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
@@ -315,92 +314,97 @@
     </section>
 
     <!-- ============ Landmarks ============ -->
-    <section class="section section--tight" id="landmarks" aria-labelledby="landmarks-title">
-      <div class="wrap">
-        <header class="section__head">
-          <p class="eyebrow reveal">Landmarks, ancient to modern</p>
-          <h2 class="reveal d1" id="landmarks-title">Wonders, woven in.</h2>
-          <p class="lede reveal d2">From the Seven Wonders of the Ancient World to the towers of today, famous landmarks appear inside the stories as tap-to-see moments, not lectures.</p>
-        </header>
-      </div>
-      <div class="rail-wrap reveal">
-        <ol class="rail" data-rail tabindex="0" aria-label="Landmarks from ancient to contemporary. Scroll sideways for more.">
+    <section class="journey" id="landmarks" data-journey aria-labelledby="landmarks-title">
+      <div class="journey__stage">
+        <div class="wrap">
+          <header class="section__head">
+            <p class="eyebrow reveal">Landmarks, ancient to modern</p>
+            <h2 class="reveal d1" id="landmarks-title">Wonders, woven in.</h2>
+            <p class="lede reveal d2">From the Seven Wonders of the Ancient World to the towers of today, famous landmarks appear inside the stories as tap-to-see moments, not lectures.</p>
+          </header>
+        </div>
+        <div class="rail-wrap">
+          <ol class="rail" data-rail aria-label="Landmarks from ancient to contemporary. Scroll sideways for more.">
           <li class="lm lm--1">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M5 54 30 14l28 40z"/><path d="M5 54 30 14l28 40zM30 14l9 40"/><path d="M2 54h60"/></svg></div>
-            <p class="lm__era">Ancient wonder</p>
+            <p class="lm__when">c. 2600–2560 BCE</p>
             <h3>Great Pyramid of Giza</h3>
-            <p class="lm__when">c. 2600–2560 BCE · Egypt</p>
+            <p class="lm__era">Egypt · Ancient wonder</p>
             <p class="lm__fact">The only Wonder of the Ancient World still standing.</p>
           </li>
           <li class="lm lm--2">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M24 54V24h16v30z"/><path d="M24 54V20h3.5v4h3v-4h3v4h3v-4H40v34M2 40l22-8M2 50l22-8M40 30l22-8M40 40l22-8M2 36v18M62 18v36M8 37.8v4M14 35.6v4M46 27.8v4M52 25.6v4M30 54v-8a2 2 0 0 1 4 0v8M2 54h60"/></svg></div>
-            <p class="lm__era">Ancient to early modern</p>
+            <p class="lm__when">7th c. BCE – 17th c. CE</p>
             <h3>Great Wall of China</h3>
-            <p class="lm__when">7th c. BCE – 17th c. CE · China</p>
+            <p class="lm__era">China · Ancient to early modern</p>
             <p class="lm__fact">Many walls, built over about 2,000 years.</p>
           </li>
           <li class="lm lm--3">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M4 54V20Q4 8 16 8h32q12 0 12 12v34z"/><path d="M4 54V20Q4 8 16 8h32q12 0 12 12v34M16 54V32h32v22M14 32l18-12 18 12zM22 32v22M29 32v22M35 32v22M42 32v22M2 54h60"/></svg></div>
-            <p class="lm__era">Ancient</p>
+            <p class="lm__when">c. 4th c. BCE – 1st c. CE</p>
             <h3>Petra</h3>
-            <p class="lm__when">c. 4th c. BCE – 1st c. CE · Jordan</p>
+            <p class="lm__era">Jordan · Ancient</p>
             <p class="lm__fact">A caravan city carved into rose-red rock by the Nabataeans.</p>
           </li>
           <li class="lm lm--4">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M6 54V30q0-12 26-12t26 12v24z"/><path d="M6 54V30q0-12 26-12t26 12v24M6.5 33h51M6 43h52M13 54v-5a3 3 0 0 1 6 0v5M23 54v-5a3 3 0 0 1 6 0v5M35 54v-5a3 3 0 0 1 6 0v5M45 54v-5a3 3 0 0 1 6 0v5M15 43v-4a2.5 2.5 0 0 1 5 0v4M25 43v-4a2.5 2.5 0 0 1 5 0v4M34 43v-4a2.5 2.5 0 0 1 5 0v4M44 43v-4a2.5 2.5 0 0 1 5 0v4M2 54h60"/></svg></div>
-            <p class="lm__era">Ancient</p>
+            <p class="lm__when">70–80 CE</p>
             <h3>Colosseum</h3>
-            <p class="lm__when">70–80 CE · Italy</p>
+            <p class="lm__era">Italy · Ancient</p>
             <p class="lm__fact">Rome’s great arena held about 50,000 people.</p>
           </li>
           <li class="lm lm--5">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M24 34q-3-10 8-17 11 7 8 17z"/><path d="M24 34q-3-10 8-17 11 7 8 17M32 17v-6M16 54V34h32v20M28 54V44a4 4 0 0 1 8 0v10M20 40v8M44 40v8M8 54V24M56 54V24M6 24h4M54 24h4M8 24v-3M56 24v-3M2 54h60"/></svg></div>
-            <p class="lm__era">Early modern</p>
+            <p class="lm__when">1632 – c. 1653</p>
             <h3>Taj Mahal</h3>
-            <p class="lm__when">1632 – c. 1653 · India</p>
+            <p class="lm__era">India · Early modern</p>
             <p class="lm__fact">A white marble tomb an emperor built for his wife, Mumtaz Mahal.</p>
           </li>
           <li class="lm lm--6">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M30.5 10Q29 34 16 54h8q8-12 16 0h8Q35 34 33.5 10z"/><path d="M30.5 10Q29 34 16 54h8q8-12 16 0h8Q35 34 33.5 10zM32 10V4M27 26h10M23.5 38h17M2 54h60"/></svg></div>
-            <p class="lm__era">Modern</p>
+            <p class="lm__when">1887–1889</p>
             <h3>Eiffel Tower</h3>
-            <p class="lm__when">1887–1889 · France</p>
+            <p class="lm__era">France · Modern</p>
             <p class="lm__fact">About 330 m of iron — the tallest structure in the world when it opened.</p>
           </li>
           <li class="lm lm--7">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M8 48q4-18 20-24-3 12-2 24zM26 48q2-22 18-30-4 14-3 30zM42 48q4-14 14-18-2 9-1 18z"/><path d="M8 48q4-18 20-24-3 12-2 24M26 48q2-22 18-30-4 14-3 30M42 48q4-14 14-18-2 9-1 18M4 48h56v6H4zM2 54h60"/></svg></div>
-            <p class="lm__era">Contemporary</p>
+            <p class="lm__when">1959–1973</p>
             <h3>Sydney Opera House</h3>
-            <p class="lm__when">1959–1973 · Australia</p>
+            <p class="lm__era">Australia · Contemporary</p>
             <p class="lm__fact">Its roof looks like sails on the harbour.</p>
           </li>
           <li class="lm lm--8">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M25 54V40h2.5V28H30V16h1.3V4h1.4v12H34v8h2.5v10H39v20z"/><path d="M25 54V40h2.5V28H30V16h1.3V4h1.4v12H34v8h2.5v10H39v20M2 54h60"/></svg></div>
-            <p class="lm__era">Contemporary</p>
+            <p class="lm__when">2004–2010</p>
             <h3>Burj Khalifa</h3>
-            <p class="lm__when">2004–2010 · United Arab Emirates</p>
+            <p class="lm__era">United Arab Emirates · Contemporary</p>
             <p class="lm__fact">At 828 m, the tallest building in the world.</p>
           </li>
           <li class="lm lm--9">
             <div class="lm__art"><svg viewBox="0 0 64 60" aria-hidden="true"><path class="f" d="M26.5 54 30.5 24h3L37.5 54z"/><path d="M26.5 54 30.5 24h3L37.5 54zM28.5 24h7v-4h-7zM30 20h4v-4h-4zM32 16V4M28.2 42h7.6M29.5 33h5M2 54h60"/></svg></div>
-            <p class="lm__era">Contemporary</p>
+            <p class="lm__when">2008–2012</p>
             <h3>Tokyo Skytree</h3>
-            <p class="lm__when">2008–2012 · Japan</p>
+            <p class="lm__era">Japan · Contemporary</p>
             <p class="lm__fact">A 634 m tower, built to stay standing in earthquakes.</p>
           </li>
-        </ol>
+          </ol>
+        </div>
         <div class="wrap rail__ctrl">
-          <p class="rail__axis"><span>Ancient</span><span>Today</span></p>
+          <p class="rail__axis" aria-hidden="true"><span>Ancient</span><i></i><span>Today</span></p>
           <div class="rail__btns" data-rail-btns hidden>
             <button type="button" class="round" data-dir="-1" aria-label="Earlier landmarks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
             <button type="button" class="round" data-dir="1" aria-label="Later landmarks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="section section--after-journey" aria-labelledby="facts-title">
       <div class="wrap">
         <div class="factcards">
           <div class="factcards__copy">
-            <h3 class="reveal">One landmark, written three ways.</h3>
+            <h2 class="h3 reveal" id="facts-title">One landmark, written three ways.</h2>
             <p class="reveal d1">Each landmark has a fact card for every level, so the Taj Mahal reads just right whether it turns up in a Low story or an Advanced one. Wonders that no longer stand are drawn as reconstructions, and labelled that way.</p>
             <p class="note reveal d1">Example wording, not final. A selection from the planned landmark set; every fact is checked again before release.</p>
           </div>
@@ -423,64 +427,39 @@
           <p class="lede reveal d2">When a story mentions something a child has never seen, the moment doesn’t pass. The picture opens on the facing pane, and the text never moves.</p>
         </header>
 
-        <div class="switch" data-switch>
-          <div class="switch__tabs">
-            <div class="seg" role="tablist" aria-label="Tap-to-see steps">
-              <button type="button" role="tab" id="tab-open" aria-controls="panel-open" aria-selected="true">The picture opens</button>
-              <button type="button" role="tab" id="tab-back" aria-controls="panel-back" aria-selected="false" tabindex="-1">Back to my line</button>
-            </div>
-          </div>
-          <div class="switch__panels">
-            <div class="switch__panel split split--flip is-active" id="panel-open" data-tab="tab-open">
-              <div class="split__copy">
-                <h3>One picture answer at a time.</h3>
-                <ol class="steps">
-                  <li><h4>Tap the marked word</h4><p>It lights up, and the line being read is held with a marker while the rest of the page dims.</p></li>
-                  <li><h4>See it on the facing pane</h4><p>One picture, one line to read, one short culture note. No onward links to wander down.</p></li>
-                  <li><h4>One button home</h4><p>“Back to my line” is the only way out, and it goes exactly where it says.</p></li>
-                </ol>
-              </div>
-              <figure class="split__media">
-                <div class="duo " data-m="r" data-duo>
+        <div class="demo" data-demo>
+          <figure class="demo__device">
+            <div class="duo" data-m="r" data-duo data-demo-duo>
             <div class="duo__body">
-              <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/06-tap-to-see-open-l-360.webp 360w, /assets/img/screens/06-tap-to-see-open-l-540.webp 540w, /assets/img/screens/06-tap-to-see-open-l-800.webp 800w, /assets/img/screens/06-tap-to-see-open-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/06-tap-to-see-open-l-540.jpg" width="1296" height="2160" alt="A reading page with one paragraph lit and marked while the others are dimmed; the words “Rin Gin” are highlighted." loading="lazy" decoding="async"></picture></div></div>
+              <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/06b-tap-to-see-return-l-360.webp 360w, /assets/img/screens/06b-tap-to-see-return-l-540.webp 540w, /assets/img/screens/06b-tap-to-see-return-l-800.webp 800w, /assets/img/screens/06b-tap-to-see-return-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/06b-tap-to-see-return-l-540.jpg" width="1296" height="2160" alt="A reading page from The Story of Urashima Taro. A marker sits beside the paragraph being read, and the words “Rin Gin” are highlighted as a tap-to-see word." loading="lazy" decoding="async"></picture><picture class="demo__over"><source type="image/webp" srcset="/assets/img/screens/06-tap-to-see-open-l-360.webp 360w, /assets/img/screens/06-tap-to-see-open-l-540.webp 540w, /assets/img/screens/06-tap-to-see-open-l-800.webp 800w, /assets/img/screens/06-tap-to-see-open-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/06-tap-to-see-open-l-540.jpg" width="1296" height="2160" alt="The same page with a picture card open: the paragraph being read stays lit and marked while the others are dimmed." loading="lazy" decoding="async"></picture><button type="button" class="hot hot--word" data-hot="word" hidden><span class="hot__tip" aria-hidden="true">Tap</span><span class="vh">Tap the marked word “Rin Gin”</span></button></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
-              <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/06-tap-to-see-open-r-360.webp 360w, /assets/img/screens/06-tap-to-see-open-r-540.webp 540w, /assets/img/screens/06-tap-to-see-open-r-800.webp 800w, /assets/img/screens/06-tap-to-see-open-r-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/06-tap-to-see-open-r-540.jpg" width="1296" height="2160" alt="A tap-to-see card: an illustrated palace under the sea titled “Rin Gin”, one line to read, a note headed “From Japan”, and a button “Back to my line”." loading="lazy" decoding="async"></picture></div></div>
+              <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/06b-tap-to-see-return-r-360.webp 360w, /assets/img/screens/06b-tap-to-see-return-r-540.webp 540w, /assets/img/screens/06b-tap-to-see-return-r-800.webp 800w, /assets/img/screens/06b-tap-to-see-return-r-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/06b-tap-to-see-return-r-540.jpg" width="1296" height="2160" alt="The facing pane shows the sea scene, with a small message at the top: “You are back at your line”." loading="lazy" decoding="async"></picture><picture class="demo__over"><source type="image/webp" srcset="/assets/img/screens/06-tap-to-see-open-r-360.webp 360w, /assets/img/screens/06-tap-to-see-open-r-540.webp 540w, /assets/img/screens/06-tap-to-see-open-r-800.webp 800w, /assets/img/screens/06-tap-to-see-open-r-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/06-tap-to-see-open-r-540.jpg" width="1296" height="2160" alt="A tap-to-see card: an illustrated palace under the sea titled “Rin Gin”, one line to read, a note headed “From Japan”, and a button “Back to my line”." loading="lazy" decoding="async"></picture><button type="button" class="hot hot--back" data-hot="back" hidden><span class="vh">Back to my line</span></button></div></div>
             </div>
           </div>
-              </figure>
-            </div>
-            <div class="switch__panel split split--flip" id="panel-back" data-tab="tab-back">
-              <div class="split__copy">
-                <h3>Back at the very same line.</h3>
-                <p>The card closes, the marker still shows the sentence, and a small message confirms it: “You are back at your line.” The word is now marked as seen, and it can be tapped again.</p>
-                <p>The page cannot be turned while a card is open, so a picture is never a way to skip the reading.</p>
-              </div>
-              <figure class="split__media">
-                <div class="duo " data-m="l" data-duo>
-            <div class="duo__body">
-              <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/06b-tap-to-see-return-l-360.webp 360w, /assets/img/screens/06b-tap-to-see-return-l-540.webp 540w, /assets/img/screens/06b-tap-to-see-return-l-800.webp 800w, /assets/img/screens/06b-tap-to-see-return-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/06b-tap-to-see-return-l-540.jpg" width="1296" height="2160" alt="The same page back at full strength, with a marker beside the paragraph that was being read." loading="lazy" decoding="async"></picture></div></div>
-              <div class="duo__hinge" aria-hidden="true"></div>
-              <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/06b-tap-to-see-return-r-360.webp 360w, /assets/img/screens/06b-tap-to-see-return-r-540.webp 540w, /assets/img/screens/06b-tap-to-see-return-r-800.webp 800w, /assets/img/screens/06b-tap-to-see-return-r-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/06b-tap-to-see-return-r-540.jpg" width="1296" height="2160" alt="The sea scene again, with a small message at the top: “You are back at your line”." loading="lazy" decoding="async"></picture></div></div>
-            </div>
-          </div>
-              </figure>
-            </div>
+            <figcaption class="demo__hint" data-demo-hint hidden>This one works. Tap the highlighted word <b>Rin Gin</b>.</figcaption>
+          </figure>
+          <div class="demo__copy">
+            <h3>One picture answer at a time.</h3>
+            <ol class="steps">
+              <li data-step="1"><h4>Tap the marked word</h4><p>It lights up, and the line being read is held with a marker while the rest of the page dims.</p></li>
+              <li data-step="2"><h4>See it on the facing pane</h4><p>One picture, one line to read, one short culture note. No onward links to wander down.</p></li>
+              <li data-step="3"><h4>One button home</h4><p>“Back to my line” is the only way out. The marker still shows the sentence, and the page cannot be turned while a card is open, so a picture is never a way to skip the reading.</p></li>
+            </ol>
+            <p class="demo__status" data-demo-status role="status"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight" aria-labelledby="characters-title">
-      <div class="wrap split">
-        <div class="split__copy">
+    <div class="wrap bento">
+      <section class="tile tile--char" aria-labelledby="characters-title">
+        <div class="tile__copy">
           <p class="eyebrow reveal">Character cards</p>
-          <h2 class="reveal d1" id="characters-title">Meet who you’re reading about.</h2>
-          <p class="reveal d2">Tap a name with a dotted underline and the character steps onto the facing pane: who they are, a few traits, and one short description. Then one button, back to the line.</p>
-          <p class="reveal d2">A character becomes a “friend you have met” the first time a child meets them in the text.</p>
+          <h2 class="h2s reveal d1" id="characters-title">Meet who you’re reading about.</h2>
+          <p class="reveal d2">Tap a name with a dotted underline and the character steps onto the facing pane: who they are, a few traits, and one short description. Then one button, back to the line. A character becomes a “friend you have met” the first time a child meets them in the text.</p>
         </div>
-        <figure class="split__media">
-          <div class="duo " data-m="r" data-duo>
+        <figure class="tile__media">
+          <div class="duo" data-m="r" data-duo>
             <div class="duo__body">
               <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/07-character-card-l-360.webp 360w, /assets/img/screens/07-character-card-l-540.webp 540w, /assets/img/screens/07-character-card-l-800.webp 800w, /assets/img/screens/07-character-card-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/07-character-card-l-540.jpg" width="1296" height="2160" alt="A Low level page where the name “Monkey” is highlighted and the other paragraphs are dimmed." loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
@@ -488,41 +467,33 @@
             </div>
           </div>
         </figure>
-      </div>
-    </section>
-
-    <!-- ============ Folded ============ -->
-    <section class="section section--tight" id="folded" aria-labelledby="folded-title">
-      <div class="wrap split split--flip split--phone">
-        <div class="split__copy">
+      </section>
+      <section class="tile tile--fold dark" id="folded" aria-labelledby="folded-title">
+        <div class="tile__copy">
           <p class="eyebrow reveal">Folded mode</p>
-          <h2 class="reveal d1" id="folded-title">Folded, it’s the same story.</h2>
-          <p class="reveal d2">Close the Duo and the page settles onto one screen: picture above, words below, the same round button to turn the page.</p>
-          <ul class="ticks reveal d2">
-            <li><strong>Your place carries across the fold.</strong> Page 5 of 14 open is page 5 of 14 folded.</li>
-            <li><strong>Reading position is remembered</strong> between sittings, down to the paragraph.</li>
-          </ul>
+          <h2 class="h2s reveal d1" id="folded-title">Folded, it’s the same story.</h2>
+          <p class="reveal d2">Close the Duo and the page settles onto one screen: picture above, words below, the same round button. Your place carries across the fold, down to the paragraph.</p>
         </div>
-        <figure class="split__media split__media--phone">
-          <div class="duo duo--phone " data-duo>
+        <figure class="tile__media tile__media--phone">
+          <div class="duo duo--phone" data-duo>
             <div class="duo__body">
-              <div class="duo__half"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/10-folded-f-360.webp 360w, /assets/img/screens/10-folded-f-540.webp 540w, /assets/img/screens/10-folded-f-800.webp 800w, /assets/img/screens/10-folded-f-1080.webp 1080w" sizes="320px"><img src="/assets/img/screens/10-folded-f-540.jpg" width="1296" height="2160" alt="Folded reading page: the monkey rides on the crocodile’s back above large story text, with a page indicator reading 5 / 14." loading="lazy" decoding="async"></picture></div></div>
+              <div class="duo__half"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/10-folded-f-360.webp 360w, /assets/img/screens/10-folded-f-540.webp 540w, /assets/img/screens/10-folded-f-800.webp 800w, /assets/img/screens/10-folded-f-1080.webp 1080w" sizes="280px"><img src="/assets/img/screens/10-folded-f-540.jpg" width="1296" height="2160" alt="Folded reading page: the monkey rides on the crocodile’s back above large story text, with a page indicator reading 5 / 14." loading="lazy" decoding="async"></picture></div></div>
             </div>
           </div>
         </figure>
-      </div>
-    </section>
+      </section>
+    </div>
     </div>
 
     <!-- ============ Grown-ups ============ -->
-    <div class="sheet light">
     <section class="section" id="grown-ups" aria-labelledby="grown-title">
+      <div class="aurora aurora--soft aurora--mid" aria-hidden="true"></div>
       <div class="wrap split">
         <div class="split__copy">
           <p class="eyebrow reveal">For grown-ups</p>
           <h2 class="reveal d1" id="grown-title">Pages read, not screen time.</h2>
           <p class="reveal d2">The parent view sits behind a grown-up gate and reports one thing: reading. There is no timer and no usage clock anywhere in the app.</p>
-          <ul class="ticks reveal d2">
+          <ul class="ticks ticks--dark reveal d2">
             <li><strong>Pages read</strong> over the last seven days.</li>
             <li><strong>Stories finished</strong> and cultures visited.</li>
             <li><strong>Progress at each level</strong>, with the story being read now.</li>
@@ -530,7 +501,7 @@
           <p class="note reveal d2">Numbers on the screen are sample data.</p>
         </div>
         <figure class="split__media">
-          <div class="duo " data-m="l" data-duo>
+          <div class="duo" data-m="l" data-duo>
             <div class="duo__body">
               <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/08-parent-view-l-360.webp 360w, /assets/img/screens/08-parent-view-l-540.webp 540w, /assets/img/screens/08-parent-view-l-800.webp 800w, /assets/img/screens/08-parent-view-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/08-parent-view-l-540.jpg" width="1296" height="2160" alt="The parent view, titled “For grown-ups”, with a bar chart of pages read over the last 7 days and counts of stories finished, cultures visited and days in a row. Sample data." loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
@@ -542,35 +513,35 @@
     </section>
 
     <section class="section section--tight" aria-labelledby="promise-title">
-      <div class="wrap">
-        <header class="section__head">
+      <div class="wrap collect">
+        <div class="collect__copy">
           <p class="eyebrow reveal">Privacy by design</p>
           <h2 class="reveal d1" id="promise-title">Built to collect nothing.</h2>
-        </header>
-        <ul class="promise">
-          <li class="card reveal"><h3>No ads</h3><p>Not in the stories, not in the library, not anywhere.</p></li>
-          <li class="card reveal d1"><h3>No accounts</h3><p>No sign-in and no child profile to create.</p></li>
-          <li class="card reveal d2"><h3>No tracking</h3><p>No analytics and no third-party code in the app.</p></li>
-          <li class="card reveal d3"><h3>On the device</h3><p>Reading progress is stored on the device and does not leave it.</p></li>
-        </ul>
-        <p class="reveal figcap"><a class="textlink" href="/privacy/">Read the draft privacy summary</a></p>
+          <p class="reveal d2">No sign-up to start reading, nothing to opt out of later. This website keeps the same promise: no cookies, no analytics, no third-party requests.</p>
+          <p class="reveal d2"><a class="textlink" href="/privacy/">Read the draft privacy summary</a></p>
+        </div>
+        <dl class="ledger light reveal d1">
+          <div><dt>Ads</dt><dd><b class="none">None</b><span>Not in the stories, not in the library, not anywhere.</span></dd></div>
+          <div><dt>Accounts</dt><dd><b class="none">None</b><span>No sign-in and no child profile to create.</span></dd></div>
+          <div><dt>Tracking</dt><dd><b class="none">None</b><span>No analytics and no third-party code in the app.</span></dd></div>
+          <div><dt>Reading progress</dt><dd><b class="kept">On the device</b><span>Stored on the device, and it does not leave it.</span></dd></div>
+        </dl>
       </div>
     </section>
-    </div>
 
     <!-- ============ Family ============ -->
+    <div class="sheet light">
     <section class="section" id="family" aria-labelledby="family-title">
-      <div class="aurora aurora--mid" aria-hidden="true"></div>
       <div class="wrap">
         <header class="section__head section__head--center">
           <p class="eyebrow reveal">Omramo Family</p>
-          <h2 class="reveal d1" id="family-title"><span class="nb">Every story.</span> <span class="nb">Every level.</span> <span class="grad nb">One family.</span></h2>
+          <h2 class="reveal d1" id="family-title"><span class="nb">Every story.</span> <span class="nb">Every level.</span> <span class="nb accent">One family.</span></h2>
           <p class="lede reveal d2">One family subscription unlocks the whole library across all three levels, shared through Apple’s Family Sharing.</p>
         </header>
 
         <div class="switch" data-switch>
           <div class="switch__tabs">
-            <div class="seg dark-seg" role="tablist" aria-label="Free sample and family plan">
+            <div class="seg" role="tablist" aria-label="Free sample and family plan">
               <button type="button" role="tab" id="tab-plan" aria-controls="panel-plan" aria-selected="true">The family plan</button>
               <button type="button" role="tab" id="tab-sample" aria-controls="panel-sample" aria-selected="false" tabindex="-1">The free sample</button>
             </div>
@@ -581,16 +552,16 @@
                 <div class="plan">
                   <p class="plan__name">Omramo Family <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#6e56ff"/><path d="M7.5 13.5l3.7 3.7 7.3-7.7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
                   <p class="plan__price">Price to be announced</p>
-                  <p>One auto-renewing subscription through your Apple Account. The price will be shown in your local currency before you confirm.</p>
+                  <p>One auto-renewing subscription through your Apple ID. The price will be shown in your local currency before you confirm.</p>
                 </div>
-                <ul class="ticks ticks--dark">
+                <ul class="ticks">
                   <li><strong>The whole library</strong>, at Low, Medium and Advanced.</li>
                   <li><strong>One plan for the family</strong>, with Family Sharing.</li>
                   <li><strong>No level is sold separately.</strong></li>
                 </ul>
               </div>
               <figure class="split__media">
-                <div class="duo " data-m="r" data-duo>
+                <div class="duo" data-m="r" data-duo>
             <div class="duo__body">
               <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/09b-family-subscription-l-360.webp 360w, /assets/img/screens/09b-family-subscription-l-540.webp 540w, /assets/img/screens/09b-family-subscription-l-800.webp 800w, /assets/img/screens/09b-family-subscription-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/09b-family-subscription-l-540.jpg" width="1296" height="2160" alt="The Omramo Family screen: “Every story. Every level. One family.” with three story covers and a list of what the plan includes." loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
@@ -602,14 +573,14 @@
             <div class="switch__panel split" id="panel-sample" data-tab="tab-sample">
               <div class="split__copy">
                 <h3>Try any story first. Buying is for grown-ups.</h3>
-                <ul class="ticks ticks--dark">
+                <ul class="ticks">
                   <li><strong>Browse every cover</strong> and read the first two pages of any story, free.</li>
                   <li><strong>A child never sees a price</strong> or a buy button. The sample ends with “Ask a grown-up to unlock”.</li>
                   <li><strong>Purchases sit behind the grown-up gate</strong>, and so does every link out of the app.</li>
                 </ul>
               </div>
               <figure class="split__media">
-                <div class="duo " data-m="l" data-duo>
+                <div class="duo" data-m="l" data-duo>
             <div class="duo__body">
               <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/09-sample-paywall-l-360.webp 360w, /assets/img/screens/09-sample-paywall-l-540.webp 540w, /assets/img/screens/09-sample-paywall-l-800.webp 800w, /assets/img/screens/09-sample-paywall-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 959px) 43vw, 340px"><img src="/assets/img/screens/09-sample-paywall-l-540.jpg" width="1296" height="2160" alt="The end of a free sample: a card reading “The free sample ends here” with the button “Ask a grown-up to unlock”." loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
@@ -622,26 +593,27 @@
         </div>
       </div>
     </section>
+    </div>
 
     <!-- ============ Closing ============ -->
-    <section class="section section--tight closing" id="contact" aria-labelledby="contact-title">
-      <div class="aurora aurora--soft aurora--mid" aria-hidden="true"></div>
+    <section class="section closing" id="contact" aria-labelledby="contact-title">
+      <div class="aurora aurora--mid" aria-hidden="true"></div>
       <div class="wrap">
         <header class="section__head section__head--center">
           <p class="eyebrow reveal">Not in the App Store yet</p>
           <h2 class="reveal d1" id="contact-title">Coming <span class="grad">soon.</span></h2>
-          <p class="lede reveal d2">Omramo is in development. There is no launch date to share yet, and no sign-up form here, because we would rather not collect your details. If you would like to talk, write to us.</p>
+          <p class="lede reveal d2">Omramo is in development for iPhone Duo, iPhone and iPad. There is no launch date to share yet, and no sign-up form here, because we would rather not collect your details. If you would like to talk, write to us.</p>
         </header>
         <p class="reveal d2">
           <!-- PLACEHOLDER: mailbox not confirmed -->
           <a class="btn btn--sun" href="mailto:hello@omramo.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3.5"/><path d="M4 8l8 6 8-6"/></svg> Get in touch</a>
         </p>
         <figure class="closing__device">
-          <div class="duo " data-duo>
+          <div class="duo" data-duo>
             <div class="duo__body">
-              <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/01-splash-l-360.webp 360w, /assets/img/screens/01-splash-l-540.webp 540w, /assets/img/screens/01-splash-l-800.webp 800w, /assets/img/screens/01-splash-l-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 960px) 43vw, 410px"><img src="/assets/img/screens/01-splash-l-540.jpg" width="1296" height="2160" alt="The Omramo splash screen, left pane: the letters O, M and R of the wordmark and the words “A magical book”." loading="lazy" decoding="async"></picture></div></div>
+              <div class="duo__half duo__half--l"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/01-splash-l-360.webp 360w, /assets/img/screens/01-splash-l-540.webp 540w, /assets/img/screens/01-splash-l-800.webp 800w, /assets/img/screens/01-splash-l-1080.webp 1080w" sizes="(max-width: 960px) 46vw, 420px"><img src="/assets/img/screens/01-splash-l-540.jpg" width="1296" height="2160" alt="The Omramo splash screen, left pane: the letters O, M and R of the wordmark on a starry violet sky." loading="lazy" decoding="async"></picture></div></div>
               <div class="duo__hinge" aria-hidden="true"></div>
-              <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/01-splash-r-360.webp 360w, /assets/img/screens/01-splash-r-540.webp 540w, /assets/img/screens/01-splash-r-800.webp 800w, /assets/img/screens/01-splash-r-1080.webp 1080w" sizes="(max-width: 640px) 300px, (max-width: 960px) 43vw, 410px"><img src="/assets/img/screens/01-splash-r-540.jpg" width="1296" height="2160" alt="Right pane: the letters A, M and O, and the words “that you read.”" loading="lazy" decoding="async"></picture></div></div>
+              <div class="duo__half duo__half--r"><div class="duo__screen"><picture><source type="image/webp" srcset="/assets/img/screens/01-splash-r-360.webp 360w, /assets/img/screens/01-splash-r-540.webp 540w, /assets/img/screens/01-splash-r-800.webp 800w, /assets/img/screens/01-splash-r-1080.webp 1080w" sizes="(max-width: 960px) 46vw, 420px"><img src="/assets/img/screens/01-splash-r-540.jpg" width="1296" height="2160" alt="Right pane: the letters A, M and O of the wordmark." loading="lazy" decoding="async"></picture></div></div>
             </div>
           </div>
         </figure>
@@ -662,7 +634,7 @@
       </div>
       <div class="site-foot__small">
         <p>Omramo is in development and is not yet available. Screens show the app design in progress: illustrations are concept art, the numbers on them are sample data, and wording may change before launch.</p>
-        <p>This site uses no cookies, no analytics and no third-party requests. iPhone is a trademark of Apple Inc.</p>
+        <p>This site uses no cookies, no analytics and no third-party requests. iPhone and iPad are trademarks of Apple Inc.</p>
         <p>© 2026 Omramo</p>
       </div>
     </div>
