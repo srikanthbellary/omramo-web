@@ -1,0 +1,4 @@
+# Pre-launch: every page carries <meta name="robots" content="noindex">.
+# Crawling stays allowed so that crawlers can see that tag. Remove the meta tag at launch.
+User-agent: *
+Allow: /
