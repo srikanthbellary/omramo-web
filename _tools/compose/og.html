@@ -1,5 +1,6 @@
 <!doctype html>
-<!-- Composition for /assets/img/og.png (1200x630). Rendered by _tools/build_brand.py; not part of the site. -->
+<!-- Composition for /assets/img/og.png (1200x630). Rendered by _tools/build_brand.py; not part of the site.
+     The device shows a real capture of the app (the unfolded iPhone, round 4). -->
 <html lang="en">
 <meta charset="utf-8">
 <title>Omramo OG image</title>
@@ -9,24 +10,27 @@
   html, body { width: 1200px; height: 630px; overflow: hidden; }
   body { position: relative; isolation: isolate; background: #0e0a2e; }
   .aurora { -webkit-mask-image: none; mask-image: none; }
-  .copy { position: absolute; left: 72px; top: 0; bottom: 0; width: 520px; display: grid; align-content: center; gap: 26px; }
-  .mark { font: 800 44px/1 var(--font-display); letter-spacing: -0.012em; }
-  .copy h1 { font-size: 74px; line-height: 0.95; }
-  .copy p { font: 650 22px/1.2 var(--font-display); letter-spacing: 0.04em; color: rgba(243, 241, 255, 0.82); }
-  .device { position: absolute; left: 620px; top: 78px; width: 700px; --tilt: 0; transform: rotate(-4deg); }
+  .copy { position: absolute; left: 64px; top: 0; bottom: 0; width: 470px; display: grid; align-content: center; gap: 24px; }
+  .mark { display: flex; align-items: center; gap: 16px; font: 800 40px/1 var(--font-display); letter-spacing: -0.012em; }
+  .mark img { width: 64px; height: 64px; border-radius: 22.5%; box-shadow: 0 8px 22px rgba(3, 1, 24, 0.6); }
+  .copy h1 { font-size: 62px; line-height: 0.98; }
+  .tag { font: 700 28px/1.15 var(--font-display); color: #ffd25a; }
+  .copy p:last-child { font: 650 19px/1.3 var(--font-display); letter-spacing: 0.03em; color: rgba(243, 241, 255, 0.82); }
+  .device { position: absolute; left: 552px; top: 168px; width: 620px; transform: rotate(-3deg); }
 </style>
 <body>
   <div class="aurora"></div>
   <div class="copy">
-    <div class="mark">OM<span class="grad">RA</span>MO</div>
+    <div class="mark"><img src="/assets/img/icon-192.png" alt=""><span>OM<span class="grad">RA</span>MO</span></div>
     <h1>Read your way <span class="grad">around the world.</span></h1>
-    <p>Stories from ten regions of the world · Three reading levels · Coming soon</p>
+    <p class="tag">Turn the page. See the world.</p>
+    <p>32 stories · ten regions · three reading levels · coming soon</p>
   </div>
-  <div class="device duo">
+  <div class="device duo duo--real">
     <div class="duo__body">
-      <div class="duo__half duo__half--l"><div class="duo__screen"><img src="/assets/img/screens/03-read-low-l-800.webp" alt=""></div></div>
+      <div class="duo__half duo__half--l"><div class="duo__screen"><img src="/assets/img/shots/duo-monkey-l-700.webp" alt=""></div></div>
       <div class="duo__hinge"></div>
-      <div class="duo__half duo__half--r"><div class="duo__screen"><img src="/assets/img/screens/03-read-low-r-800.webp" alt=""></div></div>
+      <div class="duo__half duo__half--r"><div class="duo__screen"><img src="/assets/img/shots/duo-monkey-r-700.webp" alt=""></div></div>
     </div>
   </div>
 </body>

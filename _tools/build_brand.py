@@ -1,42 +1,35 @@
 #!/usr/bin/env python3
-"""Render the OG image and the icon set from the HTML compositions in _tools/compose/.
+"""Build the icon set from the app's icon, and render the OG image.
 
-Usage: python3 _tools/build_brand.py [base-url]
-Serve the site first:  python3 -m http.server 8765
-Writes assets/img/og.png, assets/img/icon-192.png, assets/img/icon-512.png,
-apple-touch-icon.png and favicon.ico.
+Usage: python3 _tools/build_brand.py <app-icon-1024.png> [base-url]
+       app icon: <app-repo>/docs/brand/app-icon-1024.png (round 4, full square; iOS masks
+       the corners itself, so the site uses it as is)
+Serve the site first (for the OG image):  python3 -m http.server 8765
+Writes assets/img/icon-192.png, assets/img/icon-512.png, apple-touch-icon.png, favicon.ico,
+and assets/img/og.png (from _tools/compose/og.html).
 """
 import os
 import subprocess
 import sys
-import tempfile
 
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
-BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8765"
+ICON = sys.argv[1]
+BASE = sys.argv[2] if len(sys.argv) > 2 else "http://localhost:8765"
 
-
-def render(page, w, h, out):
-    subprocess.run(
-        ["google-chrome", "--headless=new", "--no-sandbox", "--hide-scrollbars", "--disable-gpu",
-         "--force-device-scale-factor=1", "--timeout=4000", f"--window-size={w},{h}",
-         f"--screenshot={out}", f"{BASE}/_tools/compose/{page}"],
-        check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-
+icon = Image.open(ICON).convert("RGB")
+for size, path in ((512, "assets/img/icon-512.png"), (192, "assets/img/icon-192.png"), (180, "apple-touch-icon.png")):
+    icon.resize((size, size), Image.LANCZOS).save(os.path.join(ROOT, path), optimize=True)
+icon.resize((256, 256), Image.LANCZOS).save(os.path.join(ROOT, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
+print("icons written")
 
 og = os.path.join(ROOT, "assets", "img", "og.png")
-render("og.html", 1200, 630, og)
+subprocess.run(
+    ["google-chrome", "--headless=new", "--no-sandbox", "--hide-scrollbars", "--disable-gpu",
+     "--force-device-scale-factor=1", "--virtual-time-budget=4000", "--window-size=1200,630",
+     f"--screenshot={og}", f"{BASE}/_tools/compose/og.html"],
+    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 Image.open(og).convert("RGB").quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.FLOYDSTEINBERG).save(og, optimize=True)
 print("og.png", os.path.getsize(og) // 1024, "KB")
-
-with tempfile.TemporaryDirectory() as tmp:
-    raw = os.path.join(tmp, "icon.png")
-    render("icon.html", 512, 512, raw)
-    icon = Image.open(raw).convert("RGB")
-    icon.save(os.path.join(ROOT, "assets", "img", "icon-512.png"), optimize=True)
-    icon.resize((192, 192), Image.LANCZOS).save(os.path.join(ROOT, "assets", "img", "icon-192.png"), optimize=True)
-    icon.resize((180, 180), Image.LANCZOS).save(os.path.join(ROOT, "apple-touch-icon.png"), optimize=True)
-    icon.save(os.path.join(ROOT, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
-print("icons written")

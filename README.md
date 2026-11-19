@@ -33,25 +33,34 @@ assets/
   css/site.css          All styles. Tokens follow the app's docs/DESIGN.md
   js/site.js            Progressive enhancement only (scroll scenes, tap-to-see demo, tabs, map, menu)
   fonts/                Bricolage Grotesque, Atkinson Hyperlegible Next, Inter (WOFF2 subsets) + OFL licences
-  img/screens/          Per-pane derivatives of the 12 locked app screens (WebP at 360/540/800/1080 + one JPEG)
-  img/                  og.png, icons, grain, small SVGs
+  img/shots/            Real app screenshots (iOS Simulator, rounds 4 and 5): AVIF + WebP at several widths, one PNG fallback
+  img/                  og.png, icons (from the app's icon), grain, small SVGs
 _tools/                 Build helpers. Not part of the site (see below)
 ```
 
-The home page reads top to bottom: hero → why it exists → three levels → ten regions and the
-library → landmarks → tap-to-see, character cards and folded mode → grown-ups and privacy →
-family plan → coming soon.
+The home page reads top to bottom: hero → why it exists → three levels → ten regions (with every
+story of the catalog) and the library → landmarks → tap-to-see, more cards, character cards, the
+folded / iPhone page and the story-finished moment → grown-ups and privacy → the planned family
+plan → coming soon.
 
-The headline is "Read your way around the world." The site's own copy does not call the product a
-book; keep it that way. The app's splash screen still carries its older tagline, so the closing
-section crops that screen until only the OM | RA | MO mark shows.
+The headline is "Read your way around the world." The app's tagline, "Turn the page. See the
+world." (`Brand.tagline`, round 5), sits under it, in the footer lockup and in the meta / OG text.
+The site's own copy does not call the product a book; keep it that way. The closing section shows
+the real round-5 splash, which carries the tagline.
+
+The site follows the app: whatever merges into the app is reflected here wherever it applies.
+Facts on the page (32 stories, 11 / 11 / 10 per level, 37 landmarks, the story list per region,
+the Great Pyramid fact cards) come from the app's `catalog.json`, `story.json` files and
+`landmarks.json`. Features not built in the app yet (parent view, grown-up gate, sample gate,
+subscription) are labelled as planned and have no screenshots.
 
 ### How the page is built
 
-- **Device frames** are CSS (`.duo`): two panes and a hinge, sized with container-query units so
-  one component works at any width. `.duo--phone` is the folded, single-pane device. On screens
-  ≤ 640px a two-pane figure shows one pane, chosen with `data-m="l"` or `data-m="r"`.
-- **Screens** are `<picture>` elements: WebP `srcset` with a JPEG fallback, explicit
+- **Device frames** are CSS, sized with container-query units so one component works at any width.
+  `.duo.duo--real` is the unfolded iPhone Duo (two 1416 × 1320 panes cut from the Simulator's
+  unfolded capture, and a drawn hinge); `.duo--phone` is an iPhone or the folded Duo
+  (1320 × 2868); `.pad` is an iPad in landscape (2752 × 2064).
+- **Screens** are real Simulator captures in `<picture>` elements: AVIF and WebP `srcset` with a PNG fallback, explicit
   `width`/`height`, lazy-loaded below the fold; the hero panes are eager with `fetchpriority="high"`.
   There are no image preloads: the hero images are in the markup, and a preload that does not match
   the chosen candidate exactly logs a console warning.
@@ -64,9 +73,10 @@ section crops that screen until only the OM | RA | MO mark shows.
     each `.tier__copy` passes the middle of the screen. Below 760px `.tiers` is a swipeable row.
   - *Landmarks*, ≥ 960px wide and ≥ 740px tall: `.journey` is pinned and vertical scrolling moves
     the `.rail` sideways. Otherwise the rail scrolls natively, with previous/next buttons.
-- **Tap-to-see demo** (`[data-demo]`): both states of screens 06/06b are stacked in one device.
-  `.hot--word` and `.hot--back` are real buttons placed over the highlighted word and over the
-  app's "Back to my line" button. Without JavaScript, or with `?static=1`, the open state is shown.
+- **Tap-to-see demo** (`[data-demo]`): two round-4 iPad captures of the same Monkey page, closed
+  and with the "River bank" card open, are stacked in one `.pad` (they line up pixel for pixel).
+  `.hot--word` and `.hot--back` are real buttons placed over "river bank" and over the app's
+  "Back to my line" button. Without JavaScript, or with `?static=1`, the open state is shown.
 - **Small-screen menu** is a `<details>` in the header, so it opens without JavaScript.
 - **Without JavaScript** everything is visible and readable: tabbed sections are stacked, reveals
   are off.
@@ -99,15 +109,16 @@ section crops that screen until only the OM | RA | MO mark shows.
 |---|---|---|
 | `<meta name="robots" content="noindex">` | every page `<head>` | Pre-launch preview. **Remove at launch.** |
 | `mailto:hello@omramo.com` | home closing section, footer, privacy, terms | Marked `<!-- PLACEHOLDER: mailbox not confirmed -->` |
-| "Price to be announced" | home, family section; terms | No price exists. Never guess one |
+| "Price to be announced" | home, family section (labelled planned); terms | No price exists. Never guess one |
 | Privacy page | `privacy/index.html` | DRAFT banner; summary of intended principles only. Needs legal review. Hosting-log sentence to confirm |
 | Terms page | `terms/index.html` | DRAFT banner; needs real Terms of Use |
 | App Store badge / link | not present | Add only when the app is published |
 | "Ages 6 to 14 and up, and anyone who loves stories" | home: facts line under the hero, lede, meta description | Locked 13 Nov 2026, 8:46 PM ET. Not in the App Store Kids Category. Do not narrow the age range. |
 | "in development for iPhone Duo, iPhone and iPad" | home closing section; also the hero pill and lede | Locked with the same 13 Nov 2026 decision: universal app. |
-| Peoples and places per region | home, world section | From the content plan, which is still a proposal |
-| Landmark facts and the Taj Mahal example cards | home, landmarks section | From the content plan; "must be fact-checked" there |
-| Screens | `assets/img/screens/` | Concept art and sample data from the locked v2 design |
+| Story list per region | home, world section | From the app's `catalog.json` (round 5, 32 drafts; texts, art, facts and cultural review pending). Update when the catalog changes |
+| Landmark facts and the Great Pyramid fact cards | home, landmarks section | The app's draft `landmarks.json` wording; `review.facts` pending |
+| Screens | `assets/img/shots/` | Real Simulator captures of the app in development (rounds 4 and 5); pictures are concept art drawn in code |
+| Family plan, free sample, parent view | home, family and grown-ups sections | Not built in the app; shown as planned, with no screens |
 | Canonical / Open Graph URLs | every page `<head>` | Assume `https://omramo.com` |
 
 ## Regenerating assets (`_tools/`)
@@ -118,10 +129,12 @@ The underscore keeps the folder out of a default GitHub Pages (Jekyll) build. **
 ```sh
 # fonts: subset + WOFF2 (needs fontTools; uses Node's Brotli through a small shim if the brotli wheel is missing)
 python3 _tools/build_fonts.py  <app-repo>/docs/design/source/fonts
-# screenshots: per-pane WebP/JPEG derivatives (needs Pillow)
-python3 _tools/build_images.py <app-repo>/docs/design
-# with the local server running: OG image + icons, and full-page check screenshots (needs google-chrome)
-python3 _tools/build_brand.py
+# screenshots: AVIF/WebP/PNG derivatives of the real captures listed in the script (needs Pillow with AVIF)
+#   every r5 iPad capture is saved rotated by XCUITest; the script turns it upright
+python3 _tools/build_images.py <screens-r5-dir> <sim-shots-dir>
+# icons from the app's icon, then (with the local server running) the OG image (needs google-chrome)
+python3 _tools/build_brand.py <app-repo>/docs/brand/app-icon-1024.png
+# full-page check screenshots
 python3 _tools/shots.py ../web-shots
 # captures at any size and scroll position, with console / CSP / overflow checks
 # (needs google-chrome and Node 22+; expects `python3 _tools/serve.py` on port 8766, or set BASE=)
