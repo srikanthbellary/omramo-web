@@ -683,7 +683,24 @@ html.motion .menu[open] .menu__list {
     linear-gradient(90deg, #05040d 0%, #262240 22%, #6d6990 48%, #3a3658 62%, #100d22 86%, #05040d 100%);
 }
 
-/* one pane only: the folded device, and two-pane figures on small screens */
+/* the unfolded iPhone in the Simulator: two squarer panes (1416 x 1320 each) */
+.duo--real .duo__screen {
+  aspect-ratio: 1416 / 1320;
+}
+.duo--real .duo__half--l {
+  border-radius: calc(46 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)) calc(46 * var(--u));
+}
+.duo--real .duo__half--r {
+  border-radius: calc(10 * var(--u)) calc(46 * var(--u)) calc(46 * var(--u)) calc(10 * var(--u));
+}
+.duo--real .duo__half--l .duo__screen {
+  border-radius: calc(36 * var(--u)) calc(6 * var(--u)) calc(6 * var(--u)) calc(36 * var(--u));
+}
+.duo--real .duo__half--r .duo__screen {
+  border-radius: calc(6 * var(--u)) calc(36 * var(--u)) calc(36 * var(--u)) calc(6 * var(--u));
+}
+
+/* one pane only: an iPhone, or the folded Duo (real captures are 1320 x 2868) */
 .duo--phone {
   --cols: 452;
 }
@@ -694,10 +711,60 @@ html.motion .menu[open] .menu__list {
 .duo--phone .duo__half {
   width: calc(452 * var(--u));
   padding: calc(10 * var(--u));
-  border-radius: calc(54 * var(--u));
+  border-radius: calc(66 * var(--u));
 }
 .duo--phone .duo__half .duo__screen {
-  border-radius: calc(44 * var(--u));
+  aspect-ratio: 1320 / 2868;
+  border-radius: calc(56 * var(--u));
+}
+
+/* ---------- Device: iPad, landscape (real captures are 2752 x 2064) ---------- */
+.pad {
+  position: relative;
+  container-type: inline-size;
+  width: 100%;
+  perspective: 2600px;
+}
+.pad::after {
+  content: "";
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: -6%;
+  height: 12%;
+  z-index: -1;
+  background: radial-gradient(closest-side, var(--device-shadow), transparent);
+  filter: blur(18px);
+}
+.pad__body {
+  --u: calc(100cqw / 1000);
+  padding: calc(18 * var(--u));
+  border-radius: calc(52 * var(--u));
+  background: linear-gradient(150deg, #5a5678 0%, #1c1836 22%, #0b0918 60%, #2b2748 100%);
+  box-shadow: inset 0 0 0 calc(1.4 * var(--u)) rgba(255, 255, 255, 0.16), inset 0 0 0 calc(4 * var(--u)) #06040f,
+    0 calc(30 * var(--u)) calc(70 * var(--u)) calc(-24 * var(--u)) var(--device-shadow);
+  transform: translate3d(0, calc(var(--lift, 0) * 1px), 0) rotateX(calc(var(--tilt, 0) * 1deg));
+  will-change: transform;
+}
+.pad__screen {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2752 / 2064;
+  border-radius: calc(34 * var(--u));
+  background: #0b0918;
+}
+.pad__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pad__screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 24%);
+  border-radius: inherit;
+  pointer-events: none;
 }
 @media (max-width: 640px) {
   .duo[data-m] {
@@ -799,7 +866,7 @@ html.motion .menu[open] .menu__list {
 .hero__device {
   position: relative;
   /* never taller than the viewport, so the whole device can be seen at once */
-  width: min(100% - 2 * var(--gutter), 1120px, max(560px, (100svh - 150px) * 1.23));
+  width: min(100% - 2 * var(--gutter), 1120px, max(560px, (100svh - 150px) * 2.05));
   margin: clamp(40px, 5vw, 64px) auto 0;
 }
 .hero__device .duo--phone {
@@ -811,9 +878,15 @@ html.motion .menu[open] .menu__list {
   }
   .hero__device .duo--phone {
     display: block;
-    max-width: 300px;
+    max-width: 264px;
     margin-inline: auto;
   }
+}
+.hero__tagline {
+  font: 700 clamp(1.25rem, 0.95rem + 1.2vw, 1.875rem) / 1.2 var(--font-display);
+  letter-spacing: -0.01em;
+  color: var(--accent-text);
+  margin-top: -4px;
 }
 
 /* numbered beacons on the screen, matched by the numbered notes beside it */
@@ -844,18 +917,18 @@ html.motion .menu[open] .menu__list {
   box-shadow: 0 0 0 2px rgba(255, 196, 61, 0.9);
   opacity: 0;
 }
-.duo--wide .beacon--1 { left: 79.5%; top: 22.6%; }
-.duo--wide .beacon--2 { left: 40.5%; top: 39.4%; }
-.duo--wide .beacon--3 { left: 79%; top: 87.4%; }
+.duo--wide .beacon--1 { left: 11.5%; top: 31.2%; }
+.duo--wide .beacon--2 { left: 11.5%; top: 72.6%; }
+.duo--wide .beacon--3 { left: 85.5%; top: 80%; }
 .duo--phone .beacon {
   width: 20px;
   height: 20px;
   margin: -10px 0 0 -10px;
   font-size: 0.6875rem;
 }
-.duo--phone .beacon--1 { left: 3.9%; top: 58.2%; }
-.duo--phone .beacon--2 { left: 26.5%; top: 49.4%; }
-.duo--phone .beacon--3 { left: 79.6%; top: 87.6%; }
+.duo--phone .beacon--1 { left: 91%; top: 48%; }
+.duo--phone .beacon--2 { left: 3.6%; top: 71%; }
+.duo--phone .beacon--3 { left: 81%; top: 91.5%; }
 
 .callouts {
   display: grid;
@@ -895,7 +968,7 @@ html.motion .menu[open] .menu__list {
 }
 @media (min-width: 1180px) {
   .hero__device {
-    width: min(100vw - 600px, 1120px, max(560px, (100svh - 150px) * 1.23));
+    width: min(100vw - 600px, 1120px, max(560px, (100svh - 150px) * 2.05));
   }
   .callouts {
     display: block;
@@ -921,11 +994,11 @@ html.motion .menu[open] .menu__list {
   .callout--2 span {
     grid-column: 1;
   }
-  .callout--1 { top: 16.6%; }
-  .callout--2 { top: 38.4%; }
+  .callout--1 { top: 18%; }
+  .callout--2 { top: 60%; }
   .callout--3 {
     left: calc(100% + 30px);
-    top: 84.6%;
+    top: 72%;
   }
 }
 
@@ -1430,9 +1503,6 @@ html.js:not(.static) .switch .switch__panel.is-active .split__media {
   }
   .tier__fig::before {
     display: none;
-  }
-  .tier .duo[data-m] {
-    max-width: 264px;
   }
 }
 
@@ -1971,15 +2041,21 @@ html.motion [data-map].is-in .map__route {
 }
 @media (min-width: 960px) {
   .factcards {
-    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
   }
 }
 .factcards__copy {
   display: grid;
   gap: 16px;
 }
-.factcards__copy p {
+.factcards__list {
+  margin-block: 8px 4px;
+}
+.factcards__copy > p {
   color: var(--fg-2);
+}
+.tenets + .note {
+  margin-top: 28px;
 }
 .factcards__list {
   display: grid;
@@ -2039,18 +2115,18 @@ html.motion .fact:hover {
 .demo.is-live:not(.is-open) .demo__over {
   opacity: 0;
 }
-.demo.is-live:not(.is-open) .duo__half--r .demo__over {
-  transform: translate3d(0, 5%, 0);
-}
+/* the hot spots sit over the word and over the app's "Back to my line" button;
+   positions are percentages of the iPad screenshot, centred vertically on the target */
 .hot {
   position: absolute;
   z-index: 3;
+  translate: 0 -50%;
 }
 .hot--word {
-  left: 47%;
-  top: 25.6%;
-  width: 22%;
-  height: 8.4%;
+  left: 6.1%;
+  top: 25.3%;
+  width: 15.2%;
+  height: max(6.2%, 26px);
   border-radius: 12px;
 }
 .hot--word::before,
@@ -2062,10 +2138,10 @@ html.motion .fact:hover {
   box-shadow: 0 0 0 2.5px #ff9f1a;
 }
 .hot--back {
-  left: 4.6%;
-  top: 89.2%;
-  width: 90.7%;
-  height: 7.1%;
+  left: 57%;
+  top: 93.4%;
+  width: 37%;
+  height: max(6.4%, 26px);
   border-radius: 999px;
 }
 .hot__tip {
@@ -2216,17 +2292,162 @@ html.motion .hot__tip {
   color: var(--fg-2);
   max-width: 36em;
 }
+.tile--end {
+  background: radial-gradient(80% 50% at 50% 100%, rgba(255, 180, 90, 0.34), transparent 70%),
+    linear-gradient(170deg, #4a3f86, #1d1650);
+  box-shadow: 0 40px 80px -40px rgba(22, 18, 61, 0.6);
+}
 .tile__media {
   margin-top: auto;
 }
 .tile__media--phone {
-  width: min(100%, 264px);
+  width: min(100%, 248px);
   margin-inline: auto;
 }
-@media (min-width: 960px) {
+@media (min-width: 760px) {
   .bento {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
+  .tile--char {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 960px) {
+  .tile--char {
+    flex-direction: row;
+    align-items: center;
+  }
+  .tile--char .tile__copy {
+    flex: 5 1 0;
+  }
+  .tile--char .tile__media {
+    flex: 7 1 0;
+    margin-top: 0;
+  }
+}
+
+/* ---------- More tap-to-see cards ---------- */
+.cardrow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(28px, 3vw, 40px) clamp(18px, 2.4vw, 32px);
+  margin-top: clamp(64px, 8vw, 112px);
+}
+.cardrow figcaption {
+  margin-top: 18px;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--fg-2);
+}
+.cardrow figcaption b {
+  display: block;
+  font: 700 1.0625rem/1.3 var(--font-display);
+  color: var(--fg);
+}
+
+/* ---------- Planned, not built yet ---------- */
+.planned {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  max-width: 980px;
+  margin-inline: auto;
+}
+.planned > div {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: clamp(24px, 3vw, 36px);
+  border-radius: clamp(26px, 3vw, 36px);
+  background: #fff;
+  box-shadow: 0 40px 80px -40px rgba(60, 40, 140, 0.3), inset 0 0 0 1px rgba(22, 18, 61, 0.05);
+}
+.soon {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: 14px;
+  background: var(--med-bg);
+  color: var(--med-text);
+  font: 700 0.8125rem/1 var(--font-display);
+  letter-spacing: 0.02em;
+}
+.dark .soon {
+  background: rgba(255, 196, 61, 0.16);
+  color: #ffd25a;
+}
+
+/* ---------- Region legend: the stories on each shelf ---------- */
+.region__stories {
+  grid-column: 2;
+  display: grid;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--fg-2);
+}
+.region__stories li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 8px;
+  align-items: baseline;
+}
+.region__stories .glyph {
+  height: 9px;
+  gap: 1.5px;
+  color: #fff;
+}
+.region__stories .glyph i {
+  width: 3px;
+}
+.region__stories .glyph i:nth-child(1) { height: 4px; }
+.region__stories .glyph i:nth-child(2) { height: 6.5px; }
+.region__stories .glyph i:nth-child(3) { height: 9px; }
+.levels-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  padding: 14px clamp(16px, 2vw, 24px);
+  font: 500 0.8125rem/1.3 var(--font-ui);
+  color: var(--fg-2);
+  background: rgba(11, 8, 36, 0.28);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.levels-key span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ---------- Footer lockup: the app icon, the wordmark and the tagline ---------- */
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: #fff;
+}
+.lockup img {
+  width: 44px;
+  height: 44px;
+  border-radius: 22.5%;
+  box-shadow: 0 6px 16px rgba(3, 1, 24, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.lockup > span {
+  display: grid;
+  gap: 4px;
+}
+.lockup .wordmark {
+  padding: 0;
+  font-size: 1.5rem;
+}
+.lockup small {
+  font: 600 0.875rem/1.2 var(--font-display);
+  letter-spacing: 0.01em;
+  color: var(--fg-2);
 }
 
 /* ---------- What the app collects ---------- */
@@ -2356,12 +2577,12 @@ html.motion .hot__tip {
 /* the splash rises from the bottom edge and melts into the footer */
 .closing__device {
   width: min(100%, 860px);
-  aspect-ratio: 912 / 452;
+  aspect-ratio: 1000 / 580;
   margin: clamp(56px, 8vw, 104px) auto 0;
   padding-top: 2%;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(180deg, #000 76%, transparent 93%);
-  mask-image: linear-gradient(180deg, #000 76%, transparent 93%);
+  -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent 97%);
+  mask-image: linear-gradient(180deg, #000 78%, transparent 97%);
 }
 
 /* ---------- Footer ---------- */
